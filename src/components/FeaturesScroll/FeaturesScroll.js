@@ -140,6 +140,9 @@ export default function FeaturesScroll() {
                       src={feature.appImage}
                       alt="App Interface"
                       fill
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                      quality={100}
+                      unoptimized={true}
                       className={styles.appImage}
                     />
                   </div>

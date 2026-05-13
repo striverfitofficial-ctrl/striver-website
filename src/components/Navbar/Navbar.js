@@ -36,6 +36,7 @@ export default function Navbar() {
             width={140}
             height={28}
             className={styles.logoImg}
+            style={{ width: "auto", height: "auto" }}
             priority
           />
         </a>

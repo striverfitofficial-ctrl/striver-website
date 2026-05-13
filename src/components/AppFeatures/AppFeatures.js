@@ -80,48 +80,46 @@ export default function AppFeatures() {
         </div>
       </div>
 
-      {/* ── CENTER PHONE ── */}
-      <div className={styles.phoneWrapper} ref={phoneRef}>
-        <Image
-          src="/images/phone-mockup.png"
-          alt="Striver App on Smartphone"
-          fill
-          sizes="(max-width: 768px) 100vw, 50vw"
-          quality={100}
-          unoptimized={true}
-          style={{ objectFit: "contain", objectPosition: "bottom center" }}
-          priority
-        />
-      </div>
+      {/* ── CENTER STAGE ── */}
+      <div className={styles.stage} ref={phoneRef}>
+        <div className={styles.phoneWrapper}>
+          <Image
+            src="/images/phone-mockup.png"
+            alt="Striver App on Smartphone"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={100}
+            unoptimized={true}
+            style={{ objectFit: "contain", objectPosition: "bottom center" }}
+            priority
+          />
+        </div>
 
-      {/* ── RIGHT SIDE FEATURES ── */}
-      <div className={styles.rightCol} ref={rightColRef}>
-        {/* Feature 1 */}
-        <div className={styles.featureItem}>
-          <div
+        {/* ── RIGHT SIDE FEATURES (anchored to stage) ── */}
+        <div className={`${styles.callout} ${styles.calloutTop}`}>
+          <span
             className={styles.line}
             ref={(el) => (featureLinesRef.current[0] = el)}
           />
-          <div
-            className={styles.featurePill}
+          <span
+            className={styles.pill}
             ref={(el) => (featurePillsRef.current[0] = el)}
           >
             Minimal &amp; Productive
-          </div>
+          </span>
         </div>
 
-        {/* Feature 2 */}
-        <div className={styles.featureItem}>
-          <div
+        <div className={`${styles.callout} ${styles.calloutBottom}`}>
+          <span
             className={styles.line}
             ref={(el) => (featureLinesRef.current[1] = el)}
           />
-          <div
-            className={styles.featurePill}
+          <span
+            className={styles.pill}
             ref={(el) => (featurePillsRef.current[1] = el)}
           >
             Premium<br />Training Program
-          </div>
+          </span>
         </div>
       </div>
     </section>

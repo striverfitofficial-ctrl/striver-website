@@ -8,22 +8,6 @@
   overflow: hidden;
 }
 
-/* ── PHONE MOCKUP (center, dominant, anchored to bottom) ── */
-.phoneWrapper {
-  position: absolute;
-  /* The PNG is landscape-ish (hand extends right).
-     We make the container very wide and tall so the
-     phone+hand fills the center massively. */
-  bottom: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 950px;
-  height: 110vh;
-  max-height: 1100px;
-  z-index: 3;
-  pointer-events: none;
-}
-
 /* ── LEFT SIDE CONTENT ── */
 .leftCol {
   position: absolute;
@@ -63,79 +47,77 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* ── RIGHT SIDE FEATURE CALLOUTS ── */
-.rightCol {
+/* ── STAGE (Phone + Callouts) ── */
+.stage {
   position: absolute;
-  right: clamp(24px, 5vw, 80px);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  gap: 140px;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(950px, 65vw);
+  aspect-ratio: 3375 / 2250; /* matches phone-mockup.png */
+  z-index: 3;
 }
 
-.featureItem {
+.phoneWrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ── CALLOUTS (Lines + Pills anchored to Stage) ── */
+.callout {
+  position: absolute;
   display: flex;
   align-items: center;
+  z-index: 4;
+}
+.calloutTop {
+  top: 32%;
+  left: 58%;
+}
+.calloutBottom {
+  top: 62%;
+  left: 60%;
 }
 
 .line {
-  width: 100px;
+  width: clamp(60px, 10vw, 160px);
   height: 1px;
   background: rgba(255, 255, 255, 0.5);
   transform-origin: left center;
   flex-shrink: 0;
 }
 
-.featurePill {
+.pill {
   background: var(--color-white);
   color: #555;
-  padding: 18px 30px;
+  padding: 14px 26px;
   border-radius: 40px;
-  font-size: 15px;
-  text-align: center;
-  line-height: 1.4;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  font-size: clamp(12px, 1vw, 15px);
   white-space: nowrap;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+  text-align: center;
 }
 
 /* ==================== RESPONSIVE ==================== */
 
 @media (max-width: 1400px) {
-  .phoneWrapper {
-    width: 750px;
-    height: 100vh;
-  }
-
-  .rightCol {
-    gap: 100px;
-  }
-
-  .line {
-    width: 60px;
+  .stage {
+    width: min(800px, 70vw);
   }
 }
 
 @media (max-width: 1100px) {
-  .phoneWrapper {
-    width: 600px;
-    height: 90vh;
+  .stage {
+    width: min(650px, 75vw);
   }
 
   .leftCol {
     max-width: 240px;
   }
 
-  .rightCol {
-    gap: 80px;
-  }
-
-  .line {
-    width: 40px;
-  }
-
-  .featurePill {
+  .pill {
     padding: 14px 22px;
     font-size: 13px;
   }
@@ -165,7 +147,7 @@
     text-align: center;
     max-width: 100%;
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 40px;
     order: 1;
   }
 
@@ -179,40 +161,46 @@
     margin: 0 auto;
   }
 
-  .rightCol {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-    flex-direction: row;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-    order: 2;
-  }
-
-  .line {
-    display: none;
-  }
-
-  .featurePill {
-    white-space: normal;
-    padding: 14px 24px;
-    font-size: 14px;
-  }
-
-  .phoneWrapper {
+  /* Below ~900 px (mobile), drop the lines and stack the pills below the phone — same as today's mobile fallback. */
+  .stage {
     position: relative;
     left: auto;
     bottom: auto;
     transform: none;
     width: 100%;
     max-width: 420px;
+    aspect-ratio: auto; /* Remove fixed aspect ratio on mobile so pills stack naturally */
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .phoneWrapper {
+    position: relative;
+    width: 100%;
     height: 60vh;
     min-height: 400px;
-    margin: 0 auto;
-    order: 3;
+  }
+
+  .callout {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .line {
+    display: none; /* Hide lines on mobile */
+  }
+
+  .pill {
+    white-space: normal;
+    padding: 14px 24px;
+    font-size: 14px;
   }
 }
 
@@ -235,7 +223,6 @@
   }
 
   .phoneWrapper {
-    max-width: 320px;
     height: 55vh;
     min-height: 360px;
   }
