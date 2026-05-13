@@ -86,7 +86,9 @@ export default function AppFeatures() {
           src="/images/phone-mockup.png"
           alt="Striver App on Smartphone"
           fill
-          sizes="(max-width: 900px) 90vw, 600px"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          quality={100}
+          unoptimized={true}
           style={{ objectFit: "contain", objectPosition: "bottom center" }}
           priority
         />
