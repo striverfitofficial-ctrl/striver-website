@@ -1,0 +1,202 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import styles from "./Hero.module.css";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Hero() {
+  const sectionRef = useRef(null);
+  const headlineRef = useRef(null);
+  const ctaRef = useRef(null);
+  const lineRef = useRef(null);
+  const trustRef = useRef(null);
+  const strengthRef = useRef(null);
+  const strengthTextRef = useRef(null);
+  const strengthVisualsRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      /* ===== Hero entrance ===== */
+      const tl = gsap.timeline({ delay: 0.4 });
+
+      // Text reveal: each word clips in from bottom
+      tl.from(headlineRef.current.querySelectorAll("span"), {
+        y: 100,
+        opacity: 0,
+        clipPath: "inset(0 0 100% 0)",
+        duration: 1.2,
+        ease: "power4.out",
+        stagger: 0.08,
+      })
+        .from(
+          ctaRef.current.children,
+          { y: 30, opacity: 0, duration: 0.8, ease: "power3.out", stagger: 0.1 },
+          "-=0.5"
+        )
+        .from(
+          lineRef.current,
+          { scaleY: 0, opacity: 0, duration: 0.8, ease: "power3.out", transformOrigin: "top" },
+          "-=0.4"
+        )
+        .from(
+          trustRef.current,
+          { y: 15, opacity: 0, duration: 0.7, ease: "power3.out" },
+          "-=0.4"
+        );
+
+      /* ===== Strength scroll reveal ===== */
+      gsap.from(strengthTextRef.current.children, {
+        scrollTrigger: {
+          trigger: strengthRef.current,
+          start: "top 75%",
+          end: "top 35%",
+          toggleActions: "play none none reverse",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.12,
+      });
+
+      // Cards staggered scale + fade
+      const cards = strengthVisualsRef.current.children;
+      gsap.from(cards, {
+        scrollTrigger: {
+          trigger: strengthVisualsRef.current,
+          start: "top 80%",
+          end: "top 40%",
+          toggleActions: "play none none reverse",
+        },
+        y: 70,
+        opacity: 0,
+        scale: 0.93,
+        duration: 1,
+        ease: "power3.out",
+        stagger: 0.1,
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={sectionRef} id="home">
+      {/* ===== HERO ===== */}
+      <div className={styles.hero}>
+        <video
+          className={styles.videoBg}
+          src="/videos/hero-bg.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div className={styles.overlay} />
+
+        <div className={styles.heroContent}>
+          <h1 ref={headlineRef} className={styles.headline}>
+            <span className={styles.headlineWord}>ELEVATE</span>{" "}
+            <span className={styles.headlineWord}>YOUR</span>{" "}
+            <span className={styles.headlineWord}>PERSONAL</span>
+            <br />
+            <span className={styles.headlineWord}>FITNESS</span>{" "}
+            <span className={styles.headlineWord}>TO</span>{" "}
+            <span className={styles.headlineWord}>NEW</span>{" "}
+            <span className={styles.headlineWord}>HEIGHTS</span>
+          </h1>
+
+          <div ref={ctaRef} className={styles.ctaRow}>
+            <span className={styles.badge}>Premium Fitness Equipment For India</span>
+            <a href="#features" className={styles.ctaBtn}>
+              Get Started <span className={styles.ctaArrow}>↗</span>
+            </a>
+          </div>
+
+          <div ref={lineRef} className={styles.lineAccent} />
+        </div>
+
+        <div ref={trustRef} className={styles.trustBar}>
+          We partner with <span>more than 10 companies</span> across the world
+        </div>
+      </div>
+
+      {/* ===== STRENGTH SECTION ===== */}
+      <div ref={strengthRef} className={styles.strengthSection}>
+        <div className="container">
+          <div className={styles.strengthGrid}>
+            <div ref={strengthTextRef} className={styles.strengthText}>
+              <h2>
+                Strength training powered
+                <br />
+                by adaptive resistance
+              </h2>
+              <p>
+                Striverfit&apos;s smart home system adjusts resistance in real time
+                and guides organised workouts, providing a compact, efficient
+                strength-training solution.
+              </p>
+              <button className={styles.followBtn}>
+                Follow us on <span>↗</span>
+              </button>
+            </div>
+
+            <div ref={strengthVisualsRef} className={styles.strengthVisuals}>
+              {/* App Preview Card (left, spans 2 rows) */}
+              <div className={`${styles.visualCard} ${styles.appPreview}`}>
+                <Image
+                  src="/images/app-preview.png"
+                  alt="Striverfit App Dashboard"
+                  width={480}
+                  height={600}
+                  className={styles.appPreviewImg}
+                  style={{ objectPosition: "left center" }}
+                />
+              </div>
+
+              {/* Machine Card (center) */}
+              <div className={`${styles.visualCard} ${styles.machineCard}`}>
+                <Image
+                  src="/images/machine-detail.png"
+                  alt="Striverfit Machine in living room"
+                  width={600}
+                  height={400}
+                  className={styles.machineCardImg}
+                  style={{ objectPosition: "right center" }}
+                />
+                <div className={styles.resistanceOverlay}>
+                  <span className={styles.resistanceNum}>5</span>
+                  <span className={styles.resistanceLabel}>Current Resistance</span>
+                  <div className={styles.resistanceValue}>
+                    <span>+</span>100 kg
+                  </div>
+                </div>
+              </div>
+
+              {/* Athlete Card (right) */}
+              <div className={`${styles.visualCard} ${styles.athleteCard}`}>
+                <Image
+                  src="/images/athlete-workout.png"
+                  alt="Athlete using resistance cables"
+                  width={360}
+                  height={500}
+                  className={styles.athleteImg}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ===== BOTTOM BAR ===== */}
+      <div className={styles.bottomBar}>
+        <span className={styles.bottomLabel}>Intelligent Home Training</span>
+        <button className={styles.preorderBtn}>Pre-order soon</button>
+      </div>
+    </section>
+  );
+}

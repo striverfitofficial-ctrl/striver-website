@@ -1,0 +1,395 @@
+/* ==================== HERO SECTION ==================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.videoBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.15) 35%,
+    rgba(0, 0, 0, 0.15) 55%,
+    rgba(0, 0, 0, 0.7) 85%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+.headline {
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 7vw, 88px);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.02;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+  color: var(--color-white);
+}
+
+.headlineWord {
+  display: inline-block;
+  padding-right: 0.05em;
+}
+
+/* CTA Row */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-gray-200);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: var(--color-accent);
+  color: var(--color-black);
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s var(--ease-out-expo);
+  cursor: pointer;
+}
+
+.ctaBtn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(126, 217, 87, 0.3);
+}
+
+.ctaArrow {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.ctaBtn:hover .ctaArrow {
+  transform: translate(2px, -2px);
+}
+
+/* Vertical line accent below CTA (from the Canva design) */
+.lineAccent {
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+  margin: 24px auto 0;
+}
+
+/* Trust bar at bottom of hero */
+.trustBar {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-gray-500);
+  letter-spacing: 0.3px;
+}
+
+.trustBar span {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+/* ==================== STRENGTH SECTION ==================== */
+.strengthSection {
+  padding: 100px 0 60px;
+  background: var(--color-black);
+  overflow: hidden;
+}
+
+.strengthGrid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.strengthText h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+.strengthText p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--color-gray-400);
+  margin-bottom: 28px;
+  max-width: 400px;
+}
+
+.followBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-white);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.followBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== Visual Cards Grid (matches Canva layout) ===== */
+.strengthVisuals {
+  display: grid;
+  grid-template-columns: 240px 1fr 180px;
+  grid-template-rows: auto auto;
+  gap: 12px;
+  position: relative;
+}
+
+.visualCard {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  position: relative;
+}
+
+/* App Preview - spans 2 rows on left */
+.appPreview {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.appPreviewImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Machine card - top middle */
+.machineCard {
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.machineCardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.resistanceOverlay {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  text-align: right;
+  z-index: 2;
+}
+
+.resistanceNum {
+  display: block;
+  font-size: 11px;
+  color: var(--color-gray-400);
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+.resistanceLabel {
+  font-size: 12px;
+  color: var(--color-gray-300);
+  margin-bottom: 2px;
+}
+
+.resistanceValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.resistanceValue span {
+  color: var(--color-accent);
+}
+
+/* Athlete card - right column */
+.athleteCard {
+  grid-row: 1 / 3;
+  grid-column: 3 / 4;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.athleteImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ==================== BOTTOM BAR ==================== */
+.bottomBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--color-black);
+}
+
+.bottomLabel {
+  font-size: 13px;
+  color: var(--color-gray-400);
+  font-weight: 400;
+}
+
+.preorderBtn {
+  padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-white);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.preorderBtn:hover {
+  background: var(--color-accent);
+  color: var(--color-black);
+  border-color: var(--color-accent);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1100px) {
+  .strengthVisuals {
+    grid-template-columns: 200px 1fr 160px;
+  }
+}
+
+@media (max-width: 900px) {
+  .strengthGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .strengthText {
+    text-align: center;
+  }
+
+  .strengthText p {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .followBtn {
+    margin: 0 auto;
+  }
+
+  .strengthVisuals {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .appPreview {
+    grid-row: auto;
+    grid-column: 1 / -1;
+    max-height: 300px;
+  }
+
+  .athleteCard {
+    grid-row: auto;
+    grid-column: auto;
+    min-height: 200px;
+  }
+
+  .machineCard {
+    grid-row: auto;
+    grid-column: auto;
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .strengthVisuals {
+    grid-template-columns: 1fr;
+  }
+
+  .trustBar {
+    font-size: 12px;
+    bottom: 24px;
+    padding: 0 16px;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+  }
+
+  .bottomBar {
+    padding: 16px 20px;
+  }
+}

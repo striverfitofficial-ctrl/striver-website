@@ -1,0 +1,167 @@
+/* ==================== DISCOVER SECTION (Page 3) ==================== */
+.section {
+  min-height: 100vh;
+  background: var(--color-black);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Video in the center, contained like the machine silhouette */
+.videoContainer {
+  position: absolute;
+  top: -15%;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Radial glow behind video */
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(126, 217, 87, 0.06) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Content overlay */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(64px, 13vw, 160px);
+  font-weight: 400;
+  color: var(--color-white);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Navbar replica (same as Canva design shows) */
+.navBar {
+  position: absolute;
+  top: 24px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  padding: 4px 6px;
+  z-index: 5;
+}
+
+.navLink {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-gray-300);
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--color-white);
+}
+
+.navLinkActive {
+  color: var(--color-accent);
+}
+
+.navIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+/* Logo on discover page */
+.discoverLogo {
+  position: absolute;
+  top: 28px;
+  left: 40px;
+  z-index: 5;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+
+/* CTA button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--color-accent);
+  color: var(--color-black);
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow: 0 8px 25px rgba(126, 217, 87, 0.2);
+}
+
+.btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(126, 217, 87, 0.35);
+}
+
+.arrow {
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 900px) {
+  .navBar {
+    display: none;
+  }
+
+  .discoverLogo {
+    top: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    letter-spacing: -1px;
+  }
+}

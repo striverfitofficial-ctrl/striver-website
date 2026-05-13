@@ -1,0 +1,242 @@
+/* ==================== APP FEATURES / PAGE 4 ==================== */
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  background: var(--color-black);
+  overflow: hidden;
+}
+
+/* ── PHONE MOCKUP (center, dominant, anchored to bottom) ── */
+.phoneWrapper {
+  position: absolute;
+  /* The PNG is landscape-ish (hand extends right).
+     We make the container very wide and tall so the
+     phone+hand fills the center massively. */
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 950px;
+  height: 110vh;
+  max-height: 1100px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ── LEFT SIDE CONTENT ── */
+.leftCol {
+  position: absolute;
+  top: 50%;
+  left: clamp(32px, 5vw, 80px);
+  transform: translateY(-55%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  max-width: 300px;
+}
+
+.logo {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 4.5vw, 60px);
+  color: var(--color-white);
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+}
+
+.infoPill {
+  background: var(--color-white);
+  color: #555;
+  padding: 24px 28px;
+  border-radius: 28px;
+  font-size: 14px;
+  line-height: 1.65;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ── RIGHT SIDE FEATURE CALLOUTS ── */
+.rightCol {
+  position: absolute;
+  right: clamp(24px, 5vw, 80px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  width: 100px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  transform-origin: left center;
+  flex-shrink: 0;
+}
+
+.featurePill {
+  background: var(--color-white);
+  color: #555;
+  padding: 18px 30px;
+  border-radius: 40px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 1400px) {
+  .phoneWrapper {
+    width: 750px;
+    height: 100vh;
+  }
+
+  .rightCol {
+    gap: 100px;
+  }
+
+  .line {
+    width: 60px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .phoneWrapper {
+    width: 600px;
+    height: 90vh;
+  }
+
+  .leftCol {
+    max-width: 240px;
+  }
+
+  .rightCol {
+    gap: 80px;
+  }
+
+  .line {
+    width: 40px;
+  }
+
+  .featurePill {
+    padding: 14px 22px;
+    font-size: 13px;
+  }
+
+  .infoPill {
+    font-size: 13px;
+    padding: 20px 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section {
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftCol {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 16px;
+    order: 1;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .infoPill {
+    text-align: center;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .rightCol {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    order: 2;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .featurePill {
+    white-space: normal;
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+
+  .phoneWrapper {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    max-width: 420px;
+    height: 60vh;
+    min-height: 400px;
+    margin: 0 auto;
+    order: 3;
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    padding: 60px 16px 0;
+  }
+
+  .leftCol {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .infoPill {
+    font-size: 13px;
+    padding: 18px 20px;
+  }
+
+  .phoneWrapper {
+    max-width: 320px;
+    height: 55vh;
+    min-height: 360px;
+  }
+}
