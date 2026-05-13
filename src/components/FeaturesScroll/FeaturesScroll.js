@@ -171,6 +171,19 @@ export default function FeaturesScroll() {
                 )}
               </div>
 
+              {/* Mobile-only callout list: shown below the image on small
+                  viewports where the absolute-positioned tooltips on the
+                  image become unreadable. */}
+              {feature.tooltips && feature.tooltips.length > 0 && (
+                <ul className={styles.mobileTooltipList}>
+                  {feature.tooltips.map((tip, i) => (
+                    <li key={i} className={styles.mobileTooltipItem}>
+                      {tip.text}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
               <div className={styles.cardText}>
                 <h3 className={styles.cardTitle}>{feature.title}</h3>
                 <p className={styles.cardDesc}>{feature.desc}</p>

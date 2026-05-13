@@ -1,6 +1,7 @@
 .section {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   height: 100vh;
   background-color: #030303;
   color: #fff;
@@ -11,26 +12,29 @@
 
 .trackContainer {
   flex: 1;
+  min-height: 0;
   display: flex;
   align-items: center;
-  padding-top: 4rem;
+  /* Clear the fixed navbar (--nav-height) plus breathing room
+     so cards/tooltips never collide with the nav pill. */
+  padding-top: calc(var(--nav-height, 72px) + 1.5rem);
+  padding-bottom: 1.5rem;
   overflow: hidden;
 }
 
 .track {
   display: flex;
-  gap: 3rem;
+  gap: clamp(1.5rem, 3vw, 3rem);
   padding: 0 5vw;
-  height: 70vh;
+  height: 100%;
 }
 
 .cardWrapper {
-  width: 800px;
-  max-width: 90vw;
+  width: min(720px, 85vw);
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: clamp(0.75rem, 1.2vw, 1.25rem);
   flex-shrink: 0;
 }
 
@@ -38,7 +42,7 @@
   position: relative;
   width: 100%;
   flex: 1;
-  /* Removed overflow: hidden here so tooltips can slightly bleed if needed */
+  min-height: 0;
   background-color: #111;
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -58,7 +62,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -85,6 +89,7 @@
   align-items: center;
   z-index: 10;
   width: max-content;
+  max-width: 45%;
 }
 
 .tooltipDot {
@@ -114,58 +119,77 @@
   position: relative;
   background: rgba(255, 255, 255, 0.95);
   color: #000;
-  padding: 0.8rem 1.2rem;
+  padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.75rem, 1.2vw, 1.2rem);
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 0.85vw, 0.85rem);
   font-weight: 500;
-  max-width: 220px;
+  max-width: min(220px, 90%);
   line-height: 1.4;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   white-space: normal;
   text-align: left;
 }
 
-/* Tooltip Positioning and Connecting Lines */
-.tooltip.right {
+/* ── Tooltip directions ──
+   The connector line is always horizontal (left/right of the dot).
+   Diagonal-named directions (top-left, bottom-left, etc.) are aliased
+   to their nearest horizontal variant so every callout has a visible line. */
+
+/* Right-side text (line points left toward the dot) */
+.tooltip.right,
+.tooltip.top-right,
+.tooltip.bottom-right {
   flex-direction: row;
   transform: translate(0, -50%);
 }
-.tooltip.right .tooltipContent {
-  margin-left: 30px;
+.tooltip.right .tooltipContent,
+.tooltip.top-right .tooltipContent,
+.tooltip.bottom-right .tooltipContent {
+  margin-left: 24px;
 }
-.tooltip.right .tooltipContent::before {
+.tooltip.right .tooltipContent::before,
+.tooltip.top-right .tooltipContent::before,
+.tooltip.bottom-right .tooltipContent::before {
   content: "";
   position: absolute;
   right: 100%;
   top: 50%;
-  width: 30px;
+  width: 24px;
   height: 1px;
   background: rgba(255, 255, 255, 0.6);
 }
 
-.tooltip.left {
+/* Left-side text (line points right toward the dot) */
+.tooltip.left,
+.tooltip.top-left,
+.tooltip.bottom-left {
   flex-direction: row-reverse;
   transform: translate(-100%, -50%);
 }
-.tooltip.left .tooltipContent {
-  margin-right: 30px;
+.tooltip.left .tooltipContent,
+.tooltip.top-left .tooltipContent,
+.tooltip.bottom-left .tooltipContent {
+  margin-right: 24px;
 }
-.tooltip.left .tooltipContent::before {
+.tooltip.left .tooltipContent::before,
+.tooltip.top-left .tooltipContent::before,
+.tooltip.bottom-left .tooltipContent::before {
   content: "";
   position: absolute;
   left: 100%;
   top: 50%;
-  width: 30px;
+  width: 24px;
   height: 1px;
   background: rgba(255, 255, 255, 0.6);
 }
 
+/* Vertical-line variants */
 .tooltip.top {
   flex-direction: column-reverse;
   transform: translate(-50%, -100%);
 }
 .tooltip.top .tooltipContent {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 .tooltip.top .tooltipContent::before {
   content: "";
@@ -173,7 +197,7 @@
   top: 100%;
   left: 50%;
   width: 1px;
-  height: 30px;
+  height: 24px;
   background: rgba(255, 255, 255, 0.6);
 }
 
@@ -182,7 +206,7 @@
   transform: translate(-50%, 0);
 }
 .tooltip.bottom .tooltipContent {
-  margin-top: 30px;
+  margin-top: 24px;
 }
 .tooltip.bottom .tooltipContent::before {
   content: "";
@@ -190,7 +214,7 @@
   bottom: 100%;
   left: 50%;
   width: 1px;
-  height: 30px;
+  height: 24px;
   background: rgba(255, 255, 255, 0.6);
 }
 
@@ -232,35 +256,41 @@
   font-size: 1rem;
   font-weight: 500;
   color: #fff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Card Text */
 .cardText {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .cardTitle {
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
   font-weight: 600;
   margin-bottom: 0.5rem;
   letter-spacing: -0.02em;
 }
 
 .cardDesc {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
   color: #a0a0a0;
   line-height: 1.5;
   max-width: 90%;
 }
 
+/* Mobile-only tooltip list (hidden on desktop) */
+.mobileTooltipList {
+  display: none;
+}
+
 /* Navigation & Progress */
 .navArea {
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   padding: 0 5vw;
   gap: 2rem;
+  flex-shrink: 0;
 }
 
 .arrows {
@@ -306,39 +336,136 @@
   transform-origin: left;
 }
 
-/* Mobile Fallback */
+/* ==================== RESPONSIVE ==================== */
+
+/* Mid-size: tighten card width and tooltip text */
+@media (max-width: 1100px) {
+  .cardWrapper {
+    width: min(620px, 88vw);
+  }
+  .tooltipContent {
+    max-width: min(180px, 85%);
+  }
+}
+
+/* Tablet / small laptop: drop horizontal pin, switch to vertical stack */
 @media (max-width: 768px) {
   .section {
+    min-height: auto;
     height: auto;
     display: block;
-    padding: 4rem 0;
+    padding: calc(var(--nav-height, 72px) + 1rem) 0 2.5rem;
+    overflow: visible;
   }
 
   .trackContainer {
-    padding-top: 0;
+    flex: none;
+    padding: 0;
     overflow-x: auto;
+    overflow-y: visible;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
 
   .track {
     height: auto;
-    padding: 0 1.5rem;
-    gap: 1.5rem;
+    padding: 0 1.25rem;
+    gap: 1.25rem;
+    transform: none !important; /* GSAP doesn't run on mobile, but defend against stale styles */
   }
 
   .cardWrapper {
     width: 85vw;
+    height: auto;
     scroll-snap-align: center;
-    height: 60vh;
+    gap: 1rem;
+  }
+
+  .cardImageContainer {
+    flex: none;
+    height: 45vh;
+    min-height: 280px;
+    max-height: 420px;
+  }
+
+  /* Hide the absolute-positioned tooltipContent on mobile (they'd overlap
+     the small image). The dots stay visible as visual markers. The actual
+     text is rendered below the image via .mobileTooltipList. */
+  .tooltip .tooltipContent {
+    display: none;
+  }
+  .tooltipDot {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+  }
+  .tooltipDot::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  .mobileTooltipList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.25rem 0 0.5rem;
+    list-style: none;
+    margin: 0;
+  }
+  .mobileTooltipItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: #d8d8d8;
+  }
+  .mobileTooltipItem::before {
+    content: "";
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #00ff66;
+    box-shadow: 0 0 6px rgba(0, 255, 102, 0.6);
+  }
+
+  .cardText {
+    padding-bottom: 0.5rem;
+  }
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+  .cardDesc {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .playBtnWrapper {
+    bottom: 1rem;
+    left: 1rem;
+    gap: 0.6rem;
+  }
+  .playBtn {
+    width: 40px;
+    height: 40px;
+  }
+  .playText {
+    font-size: 0.85rem;
   }
 
   .navArea {
     display: none;
   }
+}
 
-  .tooltipContent {
-    display: none;
+@media (max-width: 480px) {
+  .cardWrapper {
+    width: 90vw;
+  }
+  .cardImageContainer {
+    height: 50vh;
+    min-height: 260px;
   }
 }
