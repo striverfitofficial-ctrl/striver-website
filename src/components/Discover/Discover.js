@@ -82,6 +82,7 @@ export default function Discover() {
         width={80}
         height={24}
         className={styles.discoverLogo}
+        style={{ width: "auto", height: "auto" }}
       />
 
       {/* Removed duplicated nav bar overlay */}
