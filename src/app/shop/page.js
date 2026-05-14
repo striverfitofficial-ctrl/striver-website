@@ -62,12 +62,22 @@ const SPECS = [
   { label: "Companion app", value: "iOS & Android" },
 ];
 
+const SLIDER_IMAGES = [
+  "/images/shop-slider/slider (1).jpeg",
+  "/images/shop-slider/slider (2).jpeg",
+  "/images/shop-slider/slider (3).jpeg",
+  "/images/shop-slider/slider (4).jpeg",
+  "/images/shop-slider/slider (5).jpeg",
+  "/images/shop-slider/slider (6).jpeg",
+];
+
 export default function ShopPage() {
   const [selectedColor, setSelectedColor] = useState("green");
   const [selectedTab, setSelectedTab] = useState("bundle"); // 'bundle' or 'accessories'
   const [selectedBundle, setSelectedBundle] = useState("pro");
   const [openFaq, setOpenFaq] = useState(0);
   const [selectedAccessories, setSelectedAccessories] = useState([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     try {
@@ -77,6 +87,18 @@ export default function ShopPage() {
       }
     } catch (e) {}
   }, []);
+
+  // Auto slider effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SLIDER_IMAGES.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToSlide = (index) => setCurrentSlide(index);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % SLIDER_IMAGES.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? SLIDER_IMAGES.length - 1 : prev - 1));
 
   const removeAccessory = (id) => {
     const newSelection = selectedAccessories.filter(item => item !== id);
@@ -105,16 +127,40 @@ export default function ShopPage() {
 
       {/* ── HERO: Product Section ── */}
       <section className={styles.heroSection}>
-        {/* Left — Product Image */}
+        {/* Left — Product Image Slider */}
         <div className={styles.productImage}>
-          <Image
-            src="/images/page7/machine-dark-render.png"
-            alt="Striverfit Machine"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            style={{ objectFit: "contain", objectPosition: "center" }}
-            priority
-          />
+          {SLIDER_IMAGES.map((src, idx) => (
+            <Image
+              key={src}
+              src={src}
+              alt={`Striverfit Machine Slide ${idx + 1}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className={`${styles.sliderImg} ${idx === currentSlide ? styles.activeSlide : ''}`}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              priority={idx === 0}
+            />
+          ))}
+
+          {/* Manual Slider Arrows */}
+          <button className={`${styles.sliderBtn} ${styles.sliderBtnPrev}`} onClick={prevSlide} aria-label="Previous Slide">
+            &#10094;
+          </button>
+          <button className={`${styles.sliderBtn} ${styles.sliderBtnNext}`} onClick={nextSlide} aria-label="Next Slide">
+            &#10095;
+          </button>
+
+          {/* Slider Dots */}
+          <div className={styles.sliderControls}>
+            {SLIDER_IMAGES.map((_, idx) => (
+              <button
+                key={idx}
+                className={`${styles.sliderDot} ${idx === currentSlide ? styles.activeDot : ''}`}
+                onClick={() => goToSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Right — Product Info */}

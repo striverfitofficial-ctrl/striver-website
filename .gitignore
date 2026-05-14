@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Large assets
 *.mp4
+.vercel

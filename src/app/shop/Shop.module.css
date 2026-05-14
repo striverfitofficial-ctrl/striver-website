@@ -556,3 +556,72 @@
   background-color: #000;
   color: #fff;
 }
+
+/* -- Product Image Slider -- */
+.sliderImg {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.activeSlide {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sliderControls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.sliderDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.activeDot {
+  background-color: #fff;
+  transform: scale(1.3);
+}
+
+.sliderBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.sliderBtn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.sliderBtnPrev {
+  left: 12px;
+}
+
+.sliderBtnNext {
+  right: 12px;
+}
