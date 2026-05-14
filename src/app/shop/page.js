@@ -247,19 +247,20 @@ export default function ShopPage() {
                       </button>
                     </div>
                   ))}
+                  {/* Add Accessory Box (replaces 'Select' button) */}
+                  <Link href="/accessories" className={styles.addAccessoryBox} aria-label="Add Accessory">
+                    <span className={styles.plusIcon}>+</span>
+                  </Link>
                 </div>
               </div>
             )}
 
             <div className={styles.bottomActions}>
-              {selectedTab === "accessories" ? (
-                <Link href="/accessories" className={styles.selectAccBtn}>
-                  Select
-                </Link>
-              ) : (
-                <div></div>
-              )}
-              <button className={styles.continueBtn}>
+              <div className={styles.spacer}></div>
+              <button 
+                className={`${styles.continueBtn} ${(selectedBundle === "pro" && selectedAccessories.length === 0) ? styles.continueDisabled : ""}`}
+                disabled={selectedBundle === "pro" && selectedAccessories.length === 0}
+              >
                 Continue <span className={styles.arrow}>→</span>
               </button>
             </div>

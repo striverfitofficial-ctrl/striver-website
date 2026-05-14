@@ -125,7 +125,38 @@ export default function Hero() {
         </div>
 
         <div ref={trustRef} className={styles.trustBar}>
-          We partner with <span>more than 10 companies</span> across the world
+          <p className={styles.trustLabel}>TRUSTED BY LEADING BRANDS</p>
+          <div className={styles.logoMarquee}>
+            <div className={styles.logoTrack}>
+              <span className={styles.logoText}>ADIDAS</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>NIKE</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>PELOTON</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>FITBIT</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>APPLE HEALTH</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>GARMIN</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>UNDER ARMOUR</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>ADIDAS</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>NIKE</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>PELOTON</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>FITBIT</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>APPLE HEALTH</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>GARMIN</span>
+              <span className={styles.logoDot}>•</span>
+              <span className={styles.logoText}>UNDER ARMOUR</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -133,7 +164,7 @@ export default function Hero() {
       <div ref={strengthRef} className={styles.strengthSection}>
         <div className="container">
           <div className={styles.strengthGrid}>
-            <div ref={strengthTextRef} className={styles.strengthText}>
+            <div ref={strengthTextRef} className={`${styles.strengthText} reveal-left`}>
               <h2>
                 Strength training powered
                 <br />
@@ -149,7 +180,7 @@ export default function Hero() {
               </button>
             </div>
 
-            <div ref={strengthVisualsRef} className={styles.strengthVisuals}>
+            <div ref={strengthVisualsRef} className={`${styles.strengthVisuals} reveal-right`}>
               {/* App Preview Card (left) */}
               <div className={`${styles.visualCard} ${styles.appPreview}`}>
                 <Image
@@ -174,6 +205,7 @@ export default function Hero() {
                   sizes="(max-width: 600px) 100vw, (max-width: 900px) 100vw, (max-width: 1100px) 45vw, 600px"
                   className={styles.machineCardImg}
                   style={{ objectFit: "cover", objectPosition: "right center" }}
+                  priority={true}
                 />
                 <div className={styles.resistanceOverlay}>
                   <span className={styles.resistanceNum}>5</span>
@@ -193,14 +225,12 @@ export default function Hero() {
                   sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, (max-width: 1100px) 25vw, 260px"
                   className={styles.athleteImg}
                   style={{ objectFit: "cover", objectPosition: "center top" }}
+                  priority={true}
                 />
               </div>
             </div>
 
-            {/* Mobile-only Follow button — rendered below the image */}
-            <button className={styles.mobileFollowBtn}>
-              Follow us on <span>↗</span>
-            </button>
+
           </div>
         </div>
       </div>

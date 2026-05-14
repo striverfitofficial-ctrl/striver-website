@@ -259,9 +259,15 @@
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.continueBtn:hover {
+.continueBtn:hover:not(:disabled) {
   transform: translateY(-2px);
   opacity: 0.9;
+}
+
+.continueDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #666;
 }
 
 .arrow {
@@ -540,21 +546,30 @@
   background-color: rgba(255, 0, 0, 0.8);
 }
 
-.selectAccBtn {
-  background-color: transparent;
-  color: #000;
-  padding: 12px 32px;
-  border-radius: 30px;
-  font-size: 14px;
-  font-weight: 500;
+.addAccessoryBox {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  border: 1px dashed #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
   text-decoration: none;
-  border: 1px solid #000;
-  transition: all 0.3s ease;
 }
 
-.selectAccBtn:hover {
-  background-color: #000;
-  color: #fff;
+.addAccessoryBox:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+.plusIcon {
+  font-size: 28px;
+  font-weight: 300;
+  color: #888;
+  line-height: 1;
 }
 
 /* -- Product Image Slider -- */

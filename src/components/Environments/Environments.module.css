@@ -150,9 +150,7 @@
 }
 
 /* Clear specific tint overlays to let the natural images show through perfectly */
-.officeOverlay {}
-.homeOverlay {}
-.gymOverlay {}
+
 
 .cardContent {
   position: relative;

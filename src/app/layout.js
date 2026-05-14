@@ -1,4 +1,5 @@
 import "./globals.css";
+import ScrollReveal from "../components/ScrollReveal/ScrollReveal";
 
 export const metadata = {
   title: "Striverfit — Elevate Your Personal Fitness",
@@ -15,7 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ScrollReveal />
+        {children}
+      </body>
     </html>
   );
 }

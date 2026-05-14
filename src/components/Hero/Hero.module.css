@@ -130,22 +130,62 @@
   margin: 24px auto 0;
 }
 
-/* Trust bar at bottom of hero */
+/* Trust bar / Partner logos marquee at bottom of hero */
 .trustBar {
   position: absolute;
-  bottom: 40px;
+  bottom: 24px;
   left: 0;
   right: 0;
   z-index: 2;
   text-align: center;
-  font-size: 14px;
-  color: var(--color-gray-500);
-  letter-spacing: 0.3px;
+  overflow: hidden;
 }
 
-.trustBar span {
-  color: var(--color-white);
+.trustLabel {
+  font-size: 11px;
   font-weight: 600;
+  color: var(--color-gray-600);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.logoMarquee {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logoTrack {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.logoText {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-gray-700);
+  letter-spacing: 2px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.logoText:hover {
+  color: var(--color-white);
+}
+
+.logoDot {
+  color: var(--color-gray-800);
+  font-size: 8px;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 12px)); }
 }
 
 /* ==================== STRENGTH SECTION ==================== */
@@ -189,20 +229,21 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 28px;
+  border: none;
   border-radius: 40px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-white);
-  background: transparent;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-black) !important;
+  background-color: var(--color-accent) !important;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .followBtn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: var(--color-accent-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--color-accent-glow);
 }
 
 /* ===== Visual Cards Grid (matches Canva layout) ===== */
@@ -235,9 +276,7 @@
   aspect-ratio: 3 / 4;
 }
 
-.appPreviewImg {
-  /* Sizing handled by <Image fill /> + style props in JSX */
-}
+
 
 /* Machine card - middle */
 .machineCard {
@@ -246,9 +285,7 @@
   aspect-ratio: 16 / 11;
 }
 
-.machineCardImg {
-  /* Sizing handled by <Image fill /> + style props in JSX */
-}
+
 
 .resistanceOverlay {
   position: absolute;
@@ -290,9 +327,7 @@
   aspect-ratio: 3 / 4;
 }
 
-.athleteImg {
-  /* Sizing handled by <Image fill /> + style props in JSX */
-}
+
 
 /* ==================== BOTTOM BAR ==================== */
 .bottomBar {

@@ -125,7 +125,7 @@ export default function About() {
               <span>difficulty balancing health with modern lifestyles</span>
             </div>
           </div>
-          <div className={styles.cardSubtext}>Most fitness systems fit<br/>into one of two categories:</div>
+          <div className={styles.cardSubtext}>Most fitness systems fit{' '}<br/>into one of two categories:</div>
         </div>
         <div className={styles.textSide}>
           <h2 className={styles.sectionHeading}>Our Vision</h2>
@@ -202,7 +202,7 @@ export default function About() {
       {/* 6. CTA */}
       <div className={`${styles.ctaSection} animate-up`}>
         <h4 className={styles.accentHeading}>Get a Demo</h4>
-        <h2 className={styles.ctaHeading}>Join Us in Simplifying<br/>Fitness.</h2>
+        <h2 className={styles.ctaHeading}>Join Us in Simplifying{' '}<br/>Fitness.</h2>
         <Link href="/wishlist" className={styles.ctaBtn}>Join Us</Link>
       </div>
 

@@ -24,15 +24,15 @@ export default function Prebook() {
 
   return (
     <section id="pricing" className={styles.section}>
-      <div className={styles.textContainer}>
+      <div className={`${styles.textContainer} reveal-up`}>
         <h2 className={styles.title}>Pre-orders Open Until Mid of 2026</h2>
         <p className={styles.subtitle}>
-          Be the first to own the intelligent Studio strength system that finally makes<br />
-          consistency effortless. Use the contact form below to get notified .
+          Be the first to own the intelligent Studio strength system that finally makes{' '}<br />
+          consistency effortless. Use the contact form below to get notified.
         </p>
       </div>
 
-      <div className={styles.sliderContainer}>
+      <div className={`${styles.sliderContainer} reveal-scale`}>
         {images.map((src, index) => (
           <Image
             key={src}

@@ -67,9 +67,9 @@ export default function AppFeatures() {
   return (
     <section ref={sectionRef} className={styles.section} id="app">
       {/* ── LEFT SIDE ── */}
-      <div className={styles.leftCol} ref={leftColRef}>
+      <div className={`${styles.leftCol} reveal-left`} ref={leftColRef}>
         <h2 className={styles.title}>
-          App Feature
+          App Feature{' '}
           <br />
           Plan
         </h2>
@@ -80,7 +80,7 @@ export default function AppFeatures() {
       </div>
 
       {/* ── CENTER STAGE ── */}
-      <div className={styles.stage} ref={phoneRef}>
+      <div className={`${styles.stage} reveal-scale`} ref={phoneRef}>
         <div className={styles.phoneWrapper}>
           <Image
             src="/images/phone-mockup.png"
@@ -117,7 +117,7 @@ export default function AppFeatures() {
             className={styles.pill}
             ref={(el) => (featurePillsRef.current[1] = el)}
           >
-            Premium<br />Training Program
+            Premium{' '}<br />Training Program
           </span>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function SocialProof() {
 
   return (
     <section className={styles.section} ref={containerRef}>
-      <div className={styles.statsContainer}>
+      <div className={`${styles.statsContainer} reveal-stagger`}>
         <div className={styles.statBox}>
           <h3 className={styles.statNumber}><span className="counter-number">0</span>+</h3>
           <p className={styles.statLabel}>Pre-orders</p>
@@ -42,7 +42,7 @@ export default function SocialProof() {
         </div>
       </div>
 
-      <div className={styles.testimonials}>
+      <div className={`${styles.testimonials} reveal-stagger`}>
         <div className={styles.testimonialCard}>
           <div className={styles.stars}>★★★★★</div>
           <p className={styles.quote}>"The Striver machine completely replaced my gym membership. It's sleek, quiet, and the adaptive resistance is a game changer."</p>
