@@ -41,6 +41,18 @@
   z-index: 1;
 }
 
+.sliderContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: radial-gradient(ellipse at center bottom, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .machineImage {
   object-fit: cover;
   object-position: center bottom;
@@ -57,7 +69,7 @@
 
 .buttonOverlay {
   position: absolute;
-  bottom: 15%;
+  bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -65,42 +77,46 @@
   gap: 1.5rem;
   align-items: center;
   z-index: 20;
+  width: 100%;
+  padding: 0 24px;
 }
 
 .joinBtn {
-  background-color: #fff;
-  color: #a4e500; /* Striver green */
+  background: var(--color-accent);
+  color: var(--color-black);
   border: none;
-  border-radius: 30px;
-  padding: 0.8rem 3rem;
-  font-size: 1.1rem;
+  border-radius: 40px;
+  padding: 16px 48px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s var(--ease-out-expo);
+  box-shadow: 0 0 30px var(--color-accent-glow);
+  width: auto;
 }
 
 .joinBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  background: var(--color-accent-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 40px var(--color-accent-glow-strong);
 }
 
 .feedbackBtn {
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #666;
+  background: transparent;
+  color: var(--color-gray-300);
   border: none;
-  border-radius: 30px;
-  padding: 0.6rem 2.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
 }
 
 .feedbackBtn:hover {
-  background-color: #fff;
-  color: #000;
+  color: var(--color-white);
+  text-decoration-color: var(--color-white);
 }
 
 /* Responsive adjustments */

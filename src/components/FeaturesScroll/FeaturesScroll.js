@@ -70,50 +70,34 @@ export default function FeaturesScroll() {
   const trackRef = useRef(null);
   const progressLineRef = useRef(null);
 
+  const handleScroll = () => {
+    if (!trackRef.current || !progressLineRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = trackRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+    progressLineRef.current.style.transform = `scaleX(${progress})`;
+  };
+
   useEffect(() => {
-    // Only attempt touch check on client
-    const isTouch = typeof window !== 'undefined' && window.matchMedia("(pointer: coarse)").matches;
-    
-    const ctx = gsap.context(() => {
-      const trackWidth = trackRef.current.scrollWidth;
-      const windowWidth = window.innerWidth;
-      const scrollDistance = trackWidth - windowWidth;
-
-      if (scrollDistance <= 0) return;
-
-      // Animate the horizontal track
-      gsap.to(trackRef.current, {
-        x: -scrollDistance,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          pinType: isTouch ? "transform" : "fixed",
-          scrub: 1,
-          start: "top top",
-          end: () => `+=${scrollDistance}`,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      // Animate the progress bar
-      gsap.fromTo(progressLineRef.current,
-        { scaleX: 0 },
-        {
-          scaleX: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            scrub: 1,
-            start: "top top",
-            end: () => `+=${scrollDistance}`,
-          },
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
+    const track = trackRef.current;
+    if (track) {
+      track.addEventListener("scroll", handleScroll);
+      handleScroll(); // Initialize
+    }
+    return () => {
+      if (track) track.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  const scrollByAmount = (direction) => {
+    if (trackRef.current) {
+      const cardWidth = trackRef.current.children[0]?.clientWidth || 0;
+      trackRef.current.scrollBy({
+        left: direction * (cardWidth + 40),
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
     <section id="features" className={styles.section} ref={sectionRef}>
@@ -199,8 +183,8 @@ export default function FeaturesScroll() {
       {/* Navigation & Progress Area */}
       <div className={styles.navArea}>
         <div className={styles.arrows}>
-          <button className={styles.arrowBtn}>←</button>
-          <button className={styles.arrowBtn}>→</button>
+          <button className={styles.arrowBtn} onClick={() => scrollByAmount(-1)}>←</button>
+          <button className={styles.arrowBtn} onClick={() => scrollByAmount(1)}>→</button>
         </div>
         <div className={styles.progressBar}>
           <div className={styles.progressTrack}></div>

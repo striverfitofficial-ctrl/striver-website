@@ -9,6 +9,7 @@ import { FiClock, FiActivity, FiTarget, FiSmartphone, FiBox, FiCpu, FiShield, Fi
 import { BiRupee, BiDumbbell } from 'react-icons/bi';
 import { HiOutlineUserGroup } from 'react-icons/hi';
 import { FaShippingFast, FaShieldAlt, FaHeadset } from 'react-icons/fa';
+import SharedFooter from '../SharedFooter/SharedFooter';
 import styles from './About.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -240,53 +241,7 @@ export default function About() {
         </div>
       </div>
 
-      <footer className={`${styles.footer} animate-up`}>
-        <div className={styles.footerBrand}>
-          <div className={styles.footerLogo}>
-            <Image src="/images/logo.png" alt="Striver Logo" fill style={{ objectFit: 'contain', filter: "brightness(0) invert(1)" }} />
-          </div>
-          <p className={styles.footerTagline}>Smart training for real lives. Consistency is made effortless.</p>
-          <div className={styles.footerContact}>
-            +91 8806300555<br/>
-            striverfit.official@gmail.com
-          </div>
-        </div>
-        <div className={styles.footerCol}>
-          <h4>Product</h4>
-          <ul>
-            <li><Link href="/#features">Features</Link></li>
-            <li><Link href="/#app">App</Link></li>
-            <li><Link href="/shop">Pricing</Link></li>
-            <li><Link href="/reviews">Reviews</Link></li>
-          </ul>
-        </div>
-        <div className={styles.footerCol}>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><span style={{ color: 'var(--color-gray-400)', fontSize: '14px', cursor: 'not-allowed' }}>Careers <span style={{ color: '#7ED957', fontSize: '10px', marginLeft: '4px' }}>(Coming Soon)</span></span></li>
-            <li><Link href="/press">Press</Link></li>
-          </ul>
-        </div>
-        <div className={styles.footerCol}>
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#warranty">Warranty</a></li>
-            <li><a href="#shipping">Shipping</a></li>
-            <li><Link href="/return">Return</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
-        </div>
-      </footer>
-
-      <div className={styles.footerBottom}>
-        <div>© 2026 Striverfit. All rights reserved.</div>
-        <div className={styles.footerLinks}>
-          <Link href="/privacy">Privacy</Link>
-          <Link href="/terms">Terms</Link>
-        </div>
-      </div>
+      <SharedFooter />
     </section>
   );
 }

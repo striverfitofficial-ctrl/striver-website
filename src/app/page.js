@@ -5,6 +5,7 @@ import Discover from "../components/Discover/Discover";
 import AppFeatures from "../components/AppFeatures/AppFeatures";
 import FeaturesScroll from "../components/FeaturesScroll/FeaturesScroll";
 import Environments from "../components/Environments/Environments";
+import SocialProof from "../components/SocialProof/SocialProof";
 import Prebook from "../components/Prebook/Prebook";
 
 import About from "../components/About/About";
@@ -19,6 +20,7 @@ export default function Home() {
       <AppFeatures />
       <FeaturesScroll />
       <Environments />
+      <SocialProof />
       <Prebook />
       <About />
     </main>

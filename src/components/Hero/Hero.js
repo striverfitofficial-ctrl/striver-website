@@ -104,14 +104,14 @@ export default function Hero() {
 
         <div className={styles.heroContent}>
           <h1 ref={headlineRef} className={styles.headline}>
-            <span className={styles.headlineWord}>ELEVATE</span>{" "}
-            <span className={styles.headlineWord}>YOUR</span>{" "}
-            <span className={styles.headlineWord}>PERSONAL</span>
+            <span className={styles.headlineWord}>Elevate</span>{" "}
+            <span className={styles.headlineWord}>your</span>{" "}
+            <span className={styles.headlineWord}>personal</span>
             <br />
-            <span className={styles.headlineWord}>FITNESS</span>{" "}
-            <span className={styles.headlineWord}>TO</span>{" "}
-            <span className={styles.headlineWord}>NEW</span>{" "}
-            <span className={styles.headlineWord}>HEIGHTS</span>
+            <span className={styles.headlineWord}>fitness</span>{" "}
+            <span className={styles.headlineWord}>to</span>{" "}
+            <span className={styles.headlineWord}>new</span>{" "}
+            <span className={styles.headlineWord}>heights.</span>
           </h1>
 
           <div ref={ctaRef} className={styles.ctaRow}>

@@ -69,12 +69,30 @@ export default function Environments() {
             opacity: 0.6,
             filter: "brightness(0.6)",
             scrollTrigger: {
-              trigger: nextCard,
-              start: "top 80%",
-              end: `top ${12 + (index + 1) * 4}vh`,
-              scrub: true,
+               trigger: nextCard,
+               start: "top 80%",
+               end: `top ${12 + (index + 1) * 4}vh`,
+               scrub: true,
             },
           });
+        }
+
+        // Background Parallax
+        const bg = card.querySelector('.parallax-bg');
+        if (bg) {
+          gsap.fromTo(bg,
+            { backgroundPositionY: "0%" },
+            {
+              backgroundPositionY: "30%",
+              ease: "none",
+              scrollTrigger: {
+                trigger: card,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true,
+              }
+            }
+          );
         }
       });
     }, sectionRef);
@@ -105,7 +123,7 @@ export default function Environments() {
               style={{ zIndex: i + 1, top: `${12 + i * 4}vh` }}
             >
               <div
-                className={styles.cardBg}
+                className={`${styles.cardBg} parallax-bg`}
                 style={{ background: card.bg }}
               />
               <div className={`${styles.cardOverlay} ${card.overlayClass}`} />
@@ -114,9 +132,12 @@ export default function Environments() {
                 <h2 className={styles.title}>{card.title}</h2>
                 <p className={styles.description}>{card.desc}</p>
 
-                {i === 2 && (
-                  <Link href="/shop" className={styles.shopBtn}>Shop now</Link>
-                )}
+                <div className={styles.cardActions}>
+                  {i === 2 && (
+                    <Link href="/shop" className={styles.shopBtn}>Shop now</Link>
+                  )}
+                  <Link href={`/${card.id}`} className={styles.learnMore}>Learn more <span className={styles.arrow}>→</span></Link>
+                </div>
               </div>
 
               {/* Bottom nav on gym card */}
