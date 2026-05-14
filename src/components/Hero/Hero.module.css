@@ -390,7 +390,9 @@
   }
 
   .followBtn {
+    display: flex;
     margin: 0 auto;
+    width: fit-content;
   }
 
   /* Only show Left_Image (appPreview) on smaller screens */
