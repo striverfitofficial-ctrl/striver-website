@@ -164,7 +164,7 @@ export default function Hero() {
       <div ref={strengthRef} className={styles.strengthSection}>
         <div className="container">
           <div className={styles.strengthGrid}>
-            <div ref={strengthTextRef} className={`${styles.strengthText} reveal-left`}>
+            <div ref={strengthTextRef} className={styles.strengthText}>
               <h2>
                 Strength training powered
                 <br />
@@ -180,7 +180,7 @@ export default function Hero() {
               </button>
             </div>
 
-            <div ref={strengthVisualsRef} className={`${styles.strengthVisuals} reveal-right`}>
+            <div ref={strengthVisualsRef} className={styles.strengthVisuals}>
               {/* App Preview Card (left) */}
               <div className={`${styles.visualCard} ${styles.appPreview}`}>
                 <Image
