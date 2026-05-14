@@ -146,27 +146,27 @@ export default function Hero() {
             </div>
 
             <div ref={strengthVisualsRef} className={styles.strengthVisuals}>
-              {/* App Preview Card (left, spans 2 rows) */}
+              {/* App Preview Card (left) */}
               <div className={`${styles.visualCard} ${styles.appPreview}`}>
                 <Image
-                  src="/images/app-preview.png"
+                  src="/images/app-preview-phone.png"
                   alt="Striverfit App Dashboard"
-                  width={480}
-                  height={600}
+                  fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, (max-width: 1100px) 30vw, 360px"
                   className={styles.appPreviewImg}
-                  style={{ objectPosition: "left center" }}
+                  style={{ objectFit: "cover", objectPosition: "center" }}
                 />
               </div>
 
-              {/* Machine Card (center) */}
+              {/* Machine Card (center, the hero visual) */}
               <div className={`${styles.visualCard} ${styles.machineCard}`}>
                 <Image
                   src="/images/machine-detail.png"
                   alt="Striverfit Machine in living room"
-                  width={600}
-                  height={400}
+                  fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 100vw, (max-width: 1100px) 45vw, 600px"
                   className={styles.machineCardImg}
-                  style={{ objectPosition: "right center" }}
+                  style={{ objectFit: "cover", objectPosition: "right center" }}
                 />
                 <div className={styles.resistanceOverlay}>
                   <span className={styles.resistanceNum}>5</span>
@@ -182,9 +182,10 @@ export default function Hero() {
                 <Image
                   src="/images/athlete-workout.png"
                   alt="Athlete using resistance cables"
-                  width={360}
-                  height={500}
+                  fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, (max-width: 1100px) 25vw, 260px"
                   className={styles.athleteImg}
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
                 />
               </div>
             </div>
