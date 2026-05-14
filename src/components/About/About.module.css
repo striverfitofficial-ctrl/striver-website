@@ -1,0 +1,538 @@
+/* src/components/About/About.module.css */
+.section {
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-bottom: 0px;
+  overflow: hidden;
+}
+
+/* ================== HERO BANNER ================== */
+.heroBanner {
+  width: 100%;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #3a8f1e 40%, var(--color-black) 100%);
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.heroBanner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, var(--color-black) 0%, transparent 100%);
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  letter-spacing: -1px;
+}
+
+.heroSubtitle {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: var(--color-white);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+/* ================== TWO COLUMN SECTION (PROBLEM & VISION) ================== */
+.twoColSection {
+  max-width: var(--container-max);
+  margin: 100px auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.twoColReverse {
+  flex-direction: row-reverse;
+}
+
+.cardSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textSide {
+  flex: 1;
+}
+
+.infoCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.cardItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.cardItem:last-child {
+  margin-bottom: 0;
+}
+
+.cardIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Icon specific colors */
+.iconRed { background: rgba(255, 59, 48, 0.2); color: #ff3b30; }
+.iconGreen { background: rgba(52, 199, 89, 0.2); color: #34c759; }
+.iconYellow { background: rgba(255, 204, 0, 0.2); color: #ffcc00; }
+.iconBlue { background: rgba(0, 122, 255, 0.2); color: #007aff; }
+.iconGray { background: rgba(255, 255, 255, 0.1); color: #fff; }
+
+.cardSubtext {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--color-gray-400);
+  text-align: center;
+}
+
+.sectionHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.sectionBody {
+  font-size: 16px;
+  color: var(--color-gray-300);
+  line-height: 1.6;
+}
+
+/* ================== OUR APPROACH ================== */
+.approachSection {
+  max-width: var(--container-max);
+  margin: 100px auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.approachImage {
+  flex: 1;
+  max-width: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3/4;
+}
+
+.approachImage img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.approachPills {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.approachPill {
+  background: var(--color-gray-900);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  width: fit-content;
+}
+
+.approachPill::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.approachText {
+  flex: 1;
+}
+
+.accentHeading {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* ================== WHY STRIVERFIT ================== */
+.whySection {
+  max-width: var(--container-max);
+  margin: 100px auto;
+  padding: 0 var(--container-padding);
+}
+
+.whyHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.whyCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.whyIcon {
+  font-size: 32px;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.whyTitle {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.whyDesc {
+  color: var(--color-gray-300);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ================== CTA ================== */
+.ctaSection {
+  text-align: center;
+  margin: 120px 0;
+  padding: 0 var(--container-padding);
+}
+
+.ctaHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 600;
+  margin-bottom: 40px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.ctaBtn {
+  background: var(--color-white);
+  color: var(--color-black);
+  padding: 16px 40px;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background: var(--color-gray-200);
+  transform: translateY(-2px);
+}
+
+/* ================== BUILT IN INDIA & FOOTER ================== */
+.builtInIndia {
+  text-align: center;
+  margin: 100px 0 60px;
+  padding: 0 var(--container-padding);
+}
+
+.builtHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.flagImage {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 12px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.builtDesc {
+  color: var(--color-gray-300);
+  font-size: 14px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.citiesRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.serviceBar {
+  border-top: 1px solid rgba(126, 217, 87, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 40px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+.serviceItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.serviceIcon {
+  font-size: 24px;
+  color: var(--color-white);
+}
+
+.serviceTitle {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.serviceDesc {
+  color: var(--color-gray-400);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 250px;
+}
+
+.footer {
+  max-width: 100%;
+  margin: 60px auto 0;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footerLogo {
+  position: relative;
+  width: 120px;
+  height: 30px;
+}
+
+.footerTagline {
+  color: var(--color-gray-300);
+  font-size: 14px;
+  max-width: 250px;
+}
+
+.footerContact {
+  color: var(--color-gray-400);
+  font-size: 13px;
+}
+
+.footerCol h4 {
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.footerCol ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerCol a {
+  color: var(--color-gray-400);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footerCol a:hover {
+  color: var(--color-white);
+}
+
+.footerBottom {
+  max-width: 100%;
+  margin: 60px auto 0;
+  padding: 24px 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-gray-500);
+  font-size: 12px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.footerLinks a:hover {
+  color: var(--color-gray-300);
+}
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 1024px) {
+  .twoColSection {
+    gap: 40px;
+  }
+  
+  .approachSection {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .approachImage {
+    flex: 1 1 100%;
+    max-width: 400px;
+  }
+  
+  .approachPills {
+    flex: 1 1 45%;
+  }
+  
+  .approachText {
+    flex: 1 1 45%;
+  }
+
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .twoColSection {
+    flex-direction: column;
+    text-align: center;
+    margin: 60px auto;
+  }
+
+  .twoColReverse {
+    flex-direction: column;
+  }
+
+  .cardItem {
+    text-align: left;
+  }
+
+  .approachSection {
+    flex-direction: column;
+    text-align: center;
+    margin: 60px auto;
+  }
+
+  .approachPills {
+    align-items: center;
+  }
+
+  .whyGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .whyCard {
+    text-align: left;
+  }
+
+  .serviceBar {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 20px;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footerTagline {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .footerCol {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroBanner {
+    padding: 60px 16px;
+  }
+  
+  .twoColSection, .approachSection, .whySection, .ctaSection, .builtInIndia {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .citiesRow {
+    gap: 12px;
+  }
+}
+@media (max-width: 768px) { .flagImage { width: 40px !important; height: 40px !important; margin-left: 8px; margin-bottom: 4px; } } @media (max-width: 480px) { .flagImage { width: 32px !important; height: 32px !important; margin-left: 6px; } }

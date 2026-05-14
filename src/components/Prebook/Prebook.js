@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Prebook.module.css";
 
 const images = [
@@ -22,7 +23,7 @@ export default function Prebook() {
   }, []);
 
   return (
-    <section className={styles.section}>
+    <section id="pricing" className={styles.section}>
       <div className={styles.textContainer}>
         <h2 className={styles.title}>Pre-orders Open Until Mid of 2026</h2>
         <p className={styles.subtitle}>
@@ -49,7 +50,7 @@ export default function Prebook() {
         ))}
 
         <div className={styles.buttonOverlay}>
-          <button className={styles.joinBtn}>Join Us</button>
+          <Link href="/wishlist" className={styles.joinBtn}>Join Us</Link>
           <button className={styles.feedbackBtn}>Give us some feedback and suggestions &gt;</button>
         </div>
       </div>

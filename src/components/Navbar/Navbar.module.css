@@ -7,9 +7,18 @@
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
   transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
 }
 
 .navbar.scrolled {
@@ -43,6 +52,9 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 40px;
   padding: 4px 6px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navLink {
@@ -158,15 +170,12 @@
   transition: color 0.3s ease;
 }
 
-.mobileLink:hover {
+.mobileLink:hover,
+.activeMobile {
   color: var(--color-accent);
 }
 
 @media (max-width: 900px) {
-  .navbar {
-    padding: 0 20px;
-  }
-
   .navLinks,
   .navActions {
     display: none;

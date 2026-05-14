@@ -1,0 +1,558 @@
+/* ── Shop Page ── */
+
+.page {
+  background: #fff;
+  color: #111;
+  min-height: 100vh;
+  font-family: var(--font-body);
+}
+
+/* ── Navbar ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  filter: brightness(0);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-accent);
+}
+
+/* ── Hero / Product Section ── */
+.heroSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.productImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #0a0a0a;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 0;
+}
+
+.productTitle {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111;
+}
+
+.productSubtitle {
+  font-size: 16px;
+  color: #555;
+}
+
+.earlyAccess {
+  font-size: 14px;
+  color: var(--color-accent);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Color Selector ── */
+.colorRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.colorLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+.colorDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.greenDot {
+  background: var(--color-accent);
+}
+
+.blackDot {
+  background: #111;
+}
+
+.colorActive {
+  border-color: #555;
+}
+
+.earlyTag {
+  font-size: 12px;
+  font-weight: 500;
+  color: #111;
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+
+/* ── Bundle / Accessories Selector ── */
+.selectorCard {
+  background: #f5f5f5;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid #e5e5e5;
+}
+
+.tabRow {
+  display: flex;
+  gap: 12px;
+}
+
+.tab {
+  padding: 10px 20px;
+  border-radius: 24px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabActive {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.bundleRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.bundleCard {
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.bundleCard:hover {
+  border-color: #999;
+}
+
+.bundleActive {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.bundleName {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.bundleType {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.bundlePrice {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background: rgba(126, 217, 87, 0.15);
+  border-radius: 6px;
+  color: #4a9e2f;
+  display: inline-block;
+  width: fit-content;
+}
+
+.bundleActive .bundlePrice {
+  background: rgba(126, 217, 87, 0.2);
+  color: var(--color-accent);
+}
+
+.accessoriesNotice {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.comingSoonText {
+  font-size: 16px;
+  font-weight: 600;
+  color: #999;
+}
+
+.continueBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 28px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.continueBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ── Details + Specs + FAQ Section ── */
+.detailsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding: 64px 40px;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-top: 1px solid #e5e5e5;
+}
+
+.detailsLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailsRight {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+}
+
+.detailPara {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ── Specs Table ── */
+.specsTitle {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin-top: 20px;
+}
+
+.specsTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.specsTable tr {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.specsTable tr:last-child {
+  border-bottom: none;
+}
+
+.specLabel {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  background: #fafafa;
+  width: 50%;
+}
+
+.specValue {
+  padding: 14px 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: right;
+}
+
+/* ── FAQ ── */
+.faqContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqTitle {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: #111;
+  background: #111;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 28px;
+  display: inline-block;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+.faqTitle sub {
+  font-size: 16px;
+}
+
+.faqItem {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.faqQuestion:hover {
+  background: #eee;
+}
+
+.faqOpen {
+  border-radius: 12px 12px 0 0;
+  background: #eee;
+}
+
+.faqChevron {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faqOpen .faqChevron {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  padding: 16px 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #444;
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ── Back Row ── */
+.backRow {
+  text-align: center;
+  padding: 32px 40px 64px;
+}
+
+.backLink {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 24px 20px;
+  }
+
+  .productImage {
+    aspect-ratio: 1;
+  }
+
+  .detailsSection {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .colorRow {
+    gap: 8px;
+  }
+
+  .earlyTag {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 500px) {
+  .productTitle {
+    font-size: 24px;
+  }
+
+  .bundleRow {
+    grid-template-columns: 1fr;
+  }
+
+  .tabRow {
+    flex-direction: column;
+  }
+
+  .tab {
+    text-align: center;
+  }
+}
+.bottomActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.accessoriesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 80px;
+  padding: 10px;
+}
+
+.accessoriesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.accThumbCard {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  position: relative;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.removeAccBtn {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.removeAccBtn:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.selectAccBtn {
+  background-color: transparent;
+  color: #000;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #000;
+  transition: all 0.3s ease;
+}
+
+.selectAccBtn:hover {
+  background-color: #000;
+  color: #fff;
+}

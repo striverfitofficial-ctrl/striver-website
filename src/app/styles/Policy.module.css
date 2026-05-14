@@ -1,0 +1,95 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-top: 80px; /* For navbar */
+}
+
+.header {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-gray-500);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px 100px;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.sectionText {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-gray-300);
+  margin-bottom: 16px;
+}
+
+.list {
+  padding-left: 20px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.listItem {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-gray-300);
+  margin-bottom: 8px;
+}
+
+.contactSection {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contactTitle {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.contactText {
+  font-size: 16px;
+  color: var(--color-gray-500);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+  
+  .sectionTitle {
+    font-size: 28px;
+  }
+  
+  .contactTitle {
+    font-size: 28px;
+  }
+}

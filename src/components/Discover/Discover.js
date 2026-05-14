@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./Discover.module.css";
@@ -11,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const NAV_ITEMS = ["Home", "Features", "How It Works", "Pricing", "App"];
 
 export default function Discover() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const btnRef = useRef(null);
@@ -74,24 +76,12 @@ export default function Discover() {
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.section} id="discover">
-      {/* Logo */}
-      <Image
-        src="/images/logo.png"
-        alt="Striverfit"
-        width={80}
-        height={24}
-        className={styles.discoverLogo}
-        style={{ width: "auto", height: "auto" }}
-      />
-
-      {/* Removed duplicated nav bar overlay */}
-
+    <section ref={sectionRef} className={styles.section} id="how-it-works">
       {/* Radial glow */}
       <div ref={glowRef} className={styles.glow} />
 
       {/* Video container */}
-      <div ref={videoRef} className={styles.videoContainer}>
+      <div ref={videoRef} className={styles.videoContainer} onClick={() => setIsVideoModalOpen(true)}>
         <video
           className={styles.video}
           src="/videos/discover.mp4"
@@ -100,6 +90,7 @@ export default function Discover() {
           loop
           playsInline
         />
+        <div className={styles.videoOverlay} />
       </div>
 
       {/* Content */}
@@ -107,10 +98,40 @@ export default function Discover() {
         <h2 ref={titleRef} className={styles.title}>
           Discover
         </h2>
-        <button ref={btnRef} className={styles.btn}>
+        <Link href="/how-it-works" ref={btnRef} className={styles.btn}>
           How it works <span className={styles.arrow}>↗</span>
+        </Link>
+
+        {/* Mobile Play Button */}
+        <button 
+          className={styles.mobilePlayBtn} 
+          onClick={() => setIsVideoModalOpen(true)}
+          aria-label="Play Discover Video"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          Watch Video
         </button>
       </div>
+
+      {/* Fullscreen Video Modal */}
+      {isVideoModalOpen && (
+        <div className={styles.videoModal} onClick={() => setIsVideoModalOpen(false)}>
+          <button className={styles.closeModalBtn} onClick={() => setIsVideoModalOpen(false)}>
+            ✕
+          </button>
+          <div className={styles.modalVideoContainer} onClick={(e) => e.stopPropagation()}>
+            <video
+              className={styles.modalVideo}
+              src="/videos/discover.mp4"
+              controls
+              autoPlay
+              playsInline
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

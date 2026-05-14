@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./FeaturesScroll.module.css";
@@ -57,9 +58,9 @@ const features = [
     appImage: "/images/live-workout-app.png",
     appStyle: { right: "5%", top: "15%", height: "70%" },
     tooltips: [
-      { text: "Weekly and monthly reports.", top: "35%", left: "10%", lineDir: "left" },
-      { text: "personal records that keep you motivated.", top: "60%", left: "15%", lineDir: "bottom-left" },
-      { text: "Real-time rep, weight, and power data recommendations.", top: "85%", left: "40%", lineDir: "bottom" }
+      { text: "Weekly and monthly reports.", top: "25%", left: "65%", lineDir: "left" },
+      { text: "personal records that keep you motivated.", top: "52%", left: "60%", lineDir: "left" },
+      { text: "Real-time rep, weight, and power data recommendations.", top: "78%", left: "70%", lineDir: "bottom" }
     ]
   }
 ];
@@ -70,50 +71,52 @@ export default function FeaturesScroll() {
   const progressLineRef = useRef(null);
 
   useEffect(() => {
-    // Only apply horizontal scroll logic on larger screens
-    if (window.innerWidth > 768) {
-      const ctx = gsap.context(() => {
-        const trackWidth = trackRef.current.scrollWidth;
-        const windowWidth = window.innerWidth;
-        const scrollDistance = trackWidth - windowWidth;
+    // Only attempt touch check on client
+    const isTouch = typeof window !== 'undefined' && window.matchMedia("(pointer: coarse)").matches;
+    
+    const ctx = gsap.context(() => {
+      const trackWidth = trackRef.current.scrollWidth;
+      const windowWidth = window.innerWidth;
+      const scrollDistance = trackWidth - windowWidth;
 
-        // Animate the horizontal track
-        gsap.to(trackRef.current, {
-          x: -scrollDistance,
+      if (scrollDistance <= 0) return;
+
+      // Animate the horizontal track
+      gsap.to(trackRef.current, {
+        x: -scrollDistance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          pin: true,
+          pinType: isTouch ? "transform" : "fixed",
+          scrub: 1,
+          start: "top top",
+          end: () => `+=${scrollDistance}`,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      // Animate the progress bar
+      gsap.fromTo(progressLineRef.current,
+        { scaleX: 0 },
+        {
+          scaleX: 1,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            pin: true,
             scrub: 1,
             start: "top top",
-            // Pin for the duration of the track length
             end: () => `+=${scrollDistance}`,
-            invalidateOnRefresh: true,
           },
-        });
+        }
+      );
+    }, sectionRef);
 
-        // Animate the progress bar
-        gsap.fromTo(progressLineRef.current,
-          { scaleX: 0 },
-          {
-            scaleX: 1,
-            ease: "none",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              scrub: 1,
-              start: "top top",
-              end: () => `+=${scrollDistance}`,
-            },
-          }
-        );
-      }, sectionRef);
-
-      return () => ctx.revert();
-    }
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section className={styles.section} ref={sectionRef}>
+    <section id="features" className={styles.section} ref={sectionRef}>
       <div className={styles.trackContainer}>
         <div className={styles.track} ref={trackRef}>
           {features.map((feature, index) => (
@@ -162,12 +165,12 @@ export default function FeaturesScroll() {
 
                 {/* Play Button */}
                 {feature.hasPlayBtn && (
-                  <div className={styles.playBtnWrapper}>
+                  <Link href="/how-it-works" className={styles.playBtnWrapper} style={{ textDecoration: 'none' }}>
                     <button className={styles.playBtn}>
                       <span className={styles.playIcon}>▶</span>
                     </button>
                     <span className={styles.playText}>Press to Watch</span>
-                  </div>
+                  </Link>
                 )}
               </div>
 

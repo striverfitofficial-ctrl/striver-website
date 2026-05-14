@@ -361,23 +361,17 @@
   .trackContainer {
     flex: none;
     padding: 0;
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
   }
 
   .track {
     height: auto;
     padding: 0 1.25rem;
     gap: 1.25rem;
-    transform: none !important; /* GSAP doesn't run on mobile, but defend against stale styles */
   }
 
   .cardWrapper {
     width: 85vw;
     height: auto;
-    scroll-snap-align: center;
     gap: 1rem;
   }
 
@@ -388,10 +382,9 @@
     max-height: 420px;
   }
 
-  /* Hide the absolute-positioned tooltipContent on mobile (they'd overlap
-     the small image). The dots stay visible as visual markers. The actual
-     text is rendered below the image via .mobileTooltipList. */
-  .tooltip .tooltipContent {
+  /* Hide the entire tooltip annotation on mobile (including the green dot).
+     The actual text is rendered below the image via .mobileTooltipList. */
+  .tooltip {
     display: none;
   }
   .tooltipDot {

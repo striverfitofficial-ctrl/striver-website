@@ -7,6 +7,8 @@ import FeaturesScroll from "../components/FeaturesScroll/FeaturesScroll";
 import Environments from "../components/Environments/Environments";
 import Prebook from "../components/Prebook/Prebook";
 
+import About from "../components/About/About";
+
 export default function Home() {
   return (
     <main>
@@ -18,6 +20,7 @@ export default function Home() {
       <FeaturesScroll />
       <Environments />
       <Prebook />
+      <About />
     </main>
   );
 }

@@ -1,0 +1,45 @@
+.main {
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Slight off-white based on screenshot */
+  color: #1a1a1a;
+  padding-top: 120px; /* For navbar */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  width: 100%;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.email {
+  font-size: 16px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+  
+  .content {
+    padding: 40px 20px;
+  }
+}

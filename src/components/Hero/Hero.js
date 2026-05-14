@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -32,19 +33,22 @@ export default function Hero() {
         ease: "power4.out",
         stagger: 0.08,
       })
-        .from(
+        .fromTo(
           ctaRef.current.children,
-          { y: 30, opacity: 0, duration: 0.8, ease: "power3.out", stagger: 0.1 },
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.1, clearProps: "all" },
           "-=0.5"
         )
-        .from(
+        .fromTo(
           lineRef.current,
-          { scaleY: 0, opacity: 0, duration: 0.8, ease: "power3.out", transformOrigin: "top" },
+          { scaleY: 0, opacity: 0 },
+          { scaleY: 1, opacity: 1, duration: 0.8, ease: "power3.out", transformOrigin: "top", clearProps: "all" },
           "-=0.4"
         )
-        .from(
+        .fromTo(
           trustRef.current,
-          { y: 15, opacity: 0, duration: 0.7, ease: "power3.out" },
+          { y: 15, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", clearProps: "all" },
           "-=0.4"
         );
 
@@ -112,9 +116,9 @@ export default function Hero() {
 
           <div ref={ctaRef} className={styles.ctaRow}>
             <span className={styles.badge}>Premium Fitness Equipment For India</span>
-            <a href="#features" className={styles.ctaBtn}>
+            <Link href="/login" className={styles.ctaBtn}>
               Get Started <span className={styles.ctaArrow}>↗</span>
-            </a>
+            </Link>
           </div>
 
           <div ref={lineRef} className={styles.lineAccent} />
@@ -149,12 +153,15 @@ export default function Hero() {
               {/* App Preview Card (left) */}
               <div className={`${styles.visualCard} ${styles.appPreview}`}>
                 <Image
-                  src="/images/app-preview-phone.png"
+                  src="/images/left-image.png"
                   alt="Striverfit App Dashboard"
                   fill
                   sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, (max-width: 1100px) 30vw, 360px"
                   className={styles.appPreviewImg}
-                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
+                  quality={100}
+                  unoptimized={true}
+                  priority
                 />
               </div>
 
@@ -189,6 +196,11 @@ export default function Hero() {
                 />
               </div>
             </div>
+
+            {/* Mobile-only Follow button — rendered below the image */}
+            <button className={styles.mobileFollowBtn}>
+              Follow us on <span>↗</span>
+            </button>
           </div>
         </div>
       </div>
@@ -196,7 +208,7 @@ export default function Hero() {
       {/* ===== BOTTOM BAR ===== */}
       <div className={styles.bottomBar}>
         <span className={styles.bottomLabel}>Intelligent Home Training</span>
-        <button className={styles.preorderBtn}>Pre-order soon</button>
+        <Link href="/shop" className={styles.preorderBtn}>Pre-order soon</Link>
       </div>
     </section>
   );

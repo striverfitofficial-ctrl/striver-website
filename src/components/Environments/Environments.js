@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { BsStars } from 'react-icons/bs';
 import styles from "./Environments.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -82,7 +84,7 @@ export default function Environments() {
 
   return (
     <>
-      <section ref={sectionRef} className={styles.section} id="how-it-works">
+      <section ref={sectionRef} className={styles.section}>
         {/* Scroll indicator bottom-left */}
         <div className={`${styles.scrollIndicator} ${sidebarVisible ? styles.visible : ""}`}>
           <div className={styles.scrollIcon}>↓</div>
@@ -113,7 +115,7 @@ export default function Environments() {
                 <p className={styles.description}>{card.desc}</p>
 
                 {i === 2 && (
-                  <button className={styles.shopBtn}>Shop now</button>
+                  <Link href="/shop" className={styles.shopBtn}>Shop now</Link>
                 )}
               </div>
 
@@ -122,12 +124,12 @@ export default function Environments() {
                 <div className={styles.bottomNav}>
                   <button className={styles.navItem}>Equipment</button>
                   <button className={`${styles.navItem} ${styles.navItemActive}`}>
-                    Quiz 🪄
+                    Quiz <BsStars style={{ marginLeft: '4px', verticalAlign: 'middle' }} />
                   </button>
-                  <button className={`${styles.navItem} ${styles.navItemActive}`}
+                  <Link href="/shop" className={`${styles.navItem} ${styles.navItemActive}`}
                     style={{ background: "var(--color-accent)", color: "var(--color-black)" }}>
                     Shop now
-                  </button>
+                  </Link>
                   <button className={styles.navItem}>Account</button>
                 </div>
               )}

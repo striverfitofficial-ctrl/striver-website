@@ -1,0 +1,186 @@
+.main {
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  padding-top: 100px; /* For navbar */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.description {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 450px;
+}
+
+.emailContainer {
+  font-size: 16px;
+  margin-bottom: 60px;
+}
+
+.emailLabel {
+  font-weight: 500;
+  color: #000;
+}
+
+.email {
+  color: #888;
+}
+
+.faqBtn {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.faqBtn:hover {
+  opacity: 0.8;
+}
+
+.rightCol {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  color: #000;
+}
+
+.input, .textarea {
+  background-color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 16px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: #555;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #7ED957;
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitBtn {
+  background-color: #7ED957;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-top: 8px;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.disclaimer a {
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.disclaimer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .content {
+    padding: 40px 20px 80px;
+  }
+}

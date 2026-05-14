@@ -1,0 +1,142 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-top: 80px; /* For navbar */
+}
+
+.reviewsSection {
+  padding: 100px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 400px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 auto 20px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-gray-400);
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background-color: #fcfcfc;
+  border-radius: 16px;
+  padding: 30px;
+  color: var(--color-black);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(126, 217, 87, 0.3);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  margin-right: 12px;
+}
+
+.userInfo {
+  flex-grow: 1;
+}
+
+.nameContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.verifiedIcon {
+  color: #ff9800; /* Orange color from screenshot */
+  font-size: 12px;
+  background: #fff3e0;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role {
+  font-size: 12px;
+  color: #757575;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.starFilled {
+  color: #ffc107;
+  font-size: 16px;
+}
+
+.starEmpty {
+  color: #ffe082;
+  font-size: 16px;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #424242;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+  
+  .divider {
+    width: 200px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reviewsSection {
+    padding: 60px 20px;
+  }
+}

@@ -65,8 +65,7 @@ export default function AppFeatures() {
   }, []);
 
   return (
-    <section ref={sectionRef} className={styles.section} id="app-features">
-
+    <section ref={sectionRef} className={styles.section} id="app">
       {/* ── LEFT SIDE ── */}
       <div className={styles.leftCol} ref={leftColRef}>
         <h2 className={styles.title}>

@@ -106,10 +106,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .section {
-    padding: 4rem 1.5rem;
-  }
-  
-  .sliderContainer {
-    height: 60vh;
+    padding: 6rem 1.5rem;
+    min-height: 100svh;
   }
 }
