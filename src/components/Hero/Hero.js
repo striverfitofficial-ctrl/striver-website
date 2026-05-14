@@ -153,7 +153,7 @@ export default function Hero() {
               {/* App Preview Card (left) */}
               <div className={`${styles.visualCard} ${styles.appPreview}`}>
                 <Image
-                  src="/images/left-image.png"
+                  src="/images/Left_Image.png"
                   alt="Striverfit App Dashboard"
                   fill
                   sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, (max-width: 1100px) 30vw, 360px"
