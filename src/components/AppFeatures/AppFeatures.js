@@ -89,7 +89,7 @@ export default function AppFeatures() {
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={100}
             unoptimized={true}
-            style={{ objectFit: "contain", objectPosition: "bottom center" }}
+            className={styles.mockupImg}
             priority
           />
         </div>

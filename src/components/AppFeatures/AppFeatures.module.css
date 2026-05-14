@@ -64,6 +64,11 @@
   pointer-events: none;
 }
 
+.mockupImg {
+  object-fit: contain;
+  object-position: bottom center;
+}
+
 /* ── CALLOUTS (Lines + Pills anchored to Stage) ── */
 .callout {
   position: absolute;
@@ -181,8 +186,13 @@
   .phoneWrapper {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     min-height: 400px;
+  }
+
+  .mockupImg {
+    object-fit: cover;
+    object-position: center bottom;
   }
 
   .callout {
