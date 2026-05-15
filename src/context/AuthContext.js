@@ -1,101 +1,80 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
-import { supabase } from '@/lib/supabase';
 
 const AuthContext = createContext(null);
 
+const STORAGE_KEY = 'striver_web_user';
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Fetch profile from public.profiles
-  const fetchProfile = useCallback(async (userId) => {
-    const { data } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', userId)
-      .single();
-    setProfile(data || null);
+  // Load user from localStorage on mount
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) setUser(JSON.parse(stored));
+    } catch {}
+    setLoading(false);
   }, []);
 
-  useEffect(() => {
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      const u = session?.user ?? null;
-      setUser(u);
-      if (u) fetchProfile(u.id);
-      setLoading(false);
-    });
+  // Persist user to localStorage
+  const persistUser = useCallback((u) => {
+    setUser(u);
+    if (u) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(u));
+    } else {
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  }, []);
 
-    // Listen for auth changes (login, logout, token refresh, OAuth callback)
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
-        const u = session?.user ?? null;
-        setUser(u);
-        if (u) {
-          await fetchProfile(u.id);
-        } else {
-          setProfile(null);
-        }
-        setLoading(false);
-      }
-    );
-
-    return () => subscription.unsubscribe();
-  }, [fetchProfile]);
-
-  // Email/password signup
+  // Signup via API route
   const signUp = async ({ email, password, firstName, lastName }) => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          first_name: firstName,
-          last_name: lastName,
-          full_name: `${firstName} ${lastName}`.trim(),
-        },
-      },
+    const res = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'signup',
+        email,
+        password,
+        first_name: firstName,
+        last_name: lastName,
+      }),
     });
-    return { data, error };
+    const data = await res.json();
+    if (!res.ok) return { data: null, error: { message: data.error } };
+    persistUser(data.user);
+    return { data, error: null };
   };
 
-  // Email/password login
+  // Login via API route
   const signIn = async ({ email, password }) => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
+    const res = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'login', email, password }),
     });
-    return { data, error };
+    const data = await res.json();
+    if (!res.ok) return { data: null, error: { message: data.error } };
+    persistUser(data.user);
+    return { data, error: null };
   };
 
-  // OAuth (Google / Apple)
+  // OAuth placeholders (Google / Apple — to be configured later)
   const signInWithOAuth = async (provider) => {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider,
-      options: {
-        redirectTo: typeof window !== 'undefined'
-          ? `${window.location.origin}/`
-          : undefined,
-      },
-    });
-    return { data, error };
+    return { data: null, error: { message: `${provider} sign-in will be available soon. Please use email/password for now.` } };
   };
 
   // Logout
   const signOut = async () => {
-    await supabase.auth.signOut();
-    setUser(null);
-    setProfile(null);
+    persistUser(null);
   };
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        profile,
         loading,
         signUp,
         signIn,

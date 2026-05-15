@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "@/context/AuthContext";
-import { supabase } from "@/lib/supabase";
 import styles from "../signup/Signup.module.css";
 
 export default function Login() {
@@ -30,36 +29,12 @@ export default function Login() {
     setLoading(false);
 
     if (authError) {
-      const msg = authError.message.toLowerCase();
-      if (msg.includes('invalid') || msg.includes('credentials')) {
-        setError('Invalid email or password. If you signed up via the Striver App, use that password — or click "Forgot Password" below.');
-      } else if (msg.includes('email not confirmed')) {
-        setError('Your email is not confirmed yet. Check your inbox for the confirmation link.');
-      } else {
-        setError(authError.message);
-      }
+      setError(authError.message);
       return;
     }
 
-    router.push("/");
-  };
-
-  const handleForgotPassword = async () => {
-    if (!email) {
-      setError('Please enter your email first, then click Forgot Password.');
-      return;
-    }
-    setError("");
-    setLoading(true);
-    const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: typeof window !== 'undefined' ? `${window.location.origin}/login` : undefined,
-    });
-    setLoading(false);
-    if (resetError) {
-      setError(resetError.message);
-    } else {
-      setSuccess(`Password reset link sent to ${email}. Check your inbox.`);
-    }
+    setSuccess("Logged in! Redirecting...");
+    setTimeout(() => router.push("/"), 800);
   };
 
   const handleOAuth = async (provider) => {
@@ -144,14 +119,6 @@ export default function Login() {
               </button>
             </div>
           </div>
-
-          <button
-            type="button"
-            className={styles.forgotLink}
-            onClick={handleForgotPassword}
-          >
-            Forgot Password?
-          </button>
 
           <button type="submit" className={styles.submitBtn} disabled={loading}>
             {loading ? "Logging in..." : "Log In"}

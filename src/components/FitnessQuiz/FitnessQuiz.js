@@ -661,10 +661,16 @@ export default function FitnessQuiz() {
 
     const submitQuiz = async () => {
       try {
-        const { data: { user } } = await supabase.auth.getUser();
+        // Get web user from localStorage (custom auth)
+        let webAccountId = null;
+        try {
+          const stored = localStorage.getItem('striver_web_user');
+          if (stored) webAccountId = JSON.parse(stored)?.id || null;
+        } catch {}
+
         await supabase.from('web_quiz_submissions').insert({
           session_id: sessionIdRef.current,
-          user_id: user?.id || null,
+          web_account_id: webAccountId,
           answers,
           results: {
             dailyCal: results.dailyCal,
