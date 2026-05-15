@@ -225,7 +225,7 @@
   max-width: 400px;
 }
 
-.followBtn {
+.heroFollowBtn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -240,7 +240,7 @@
   transition: all 0.3s ease;
 }
 
-.followBtn:hover {
+.heroFollowBtn:hover {
   background-color: var(--color-accent-hover) !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px var(--color-accent-glow);
@@ -389,7 +389,7 @@
     margin-right: auto;
   }
 
-  .followBtn {
+  .heroFollowBtn {
     display: flex;
     margin: 0 auto;
     width: fit-content;

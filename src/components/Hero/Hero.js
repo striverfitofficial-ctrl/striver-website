@@ -52,37 +52,6 @@ export default function Hero() {
           "-=0.4"
         );
 
-      /* ===== Strength scroll reveal ===== */
-      gsap.from(strengthTextRef.current.children, {
-        scrollTrigger: {
-          trigger: strengthRef.current,
-          start: "top 75%",
-          end: "top 35%",
-          toggleActions: "play none none reverse",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.12,
-      });
-
-      // Cards staggered scale + fade
-      const cards = strengthVisualsRef.current.children;
-      gsap.from(cards, {
-        scrollTrigger: {
-          trigger: strengthVisualsRef.current,
-          start: "top 80%",
-          end: "top 40%",
-          toggleActions: "play none none reverse",
-        },
-        y: 70,
-        opacity: 0,
-        scale: 0.93,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -175,7 +144,7 @@ export default function Hero() {
                 and guides organised workouts, providing a compact, efficient
                 strength-training solution.
               </p>
-              <button className={styles.followBtn}>
+              <button className={styles.heroFollowBtn}>
                 Follow us on <span>↗</span>
               </button>
             </div>
