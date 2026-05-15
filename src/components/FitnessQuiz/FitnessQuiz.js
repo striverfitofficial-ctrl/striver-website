@@ -459,7 +459,7 @@ function WeightTimelineGraph({ timeline }) {
 // ============================================
 // RESULTS
 // ============================================
-function Results({ data, onRestart }) {
+function Results({ data, onRestart, isAnonymous }) {
   const isPositiveSystem = data.smartSystem?.includes('Yes') || data.smartSystem?.includes('Possibly');
 
   return (
@@ -549,6 +549,26 @@ function Results({ data, onRestart }) {
           <h3>Elevate Your Training</h3>
           <p>You indicated interest in a smart fitness system. Striver integrates perfectly with your {data.programReco} goal.</p>
           <a href="/shop">Reserve Striver Today</a>
+        </div>
+      )}
+
+      {isAnonymous && (
+        <div className="sq-auth-prompt">
+          <div className="sq-auth-prompt__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <h3 className="sq-auth-prompt__title">Get Your Personalized Plan</h3>
+          <p className="sq-auth-prompt__text">
+            Our fitness team will review your results and reach out with a tailored plan.
+            Sign up or sign in to save your progress and unlock exclusive recommendations.
+          </p>
+          <div className="sq-auth-prompt__actions">
+            <a href="/signup" className="sq-auth-prompt__btn sq-auth-prompt__btn--primary">Sign Up</a>
+            <a href="/login" className="sq-auth-prompt__btn sq-auth-prompt__btn--secondary">Sign In</a>
+          </div>
         </div>
       )}
 
@@ -743,7 +763,7 @@ export default function FitnessQuiz() {
       <div className="sq-wizard">
         <div className="sq-wizard__inner">
           {showResults ? (
-            <Results data={results} onRestart={restart} />
+            <Results data={results} onRestart={restart} isAnonymous={!(() => { try { return !!localStorage.getItem('striver_web_user'); } catch { return false; } })()} />
           ) : (
             <>
               <ProgressBar current={currentStep} total={totalSteps} />
