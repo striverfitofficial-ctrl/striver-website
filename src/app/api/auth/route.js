@@ -1,6 +1,30 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { hashPassword, verifyPassword } from '@/lib/password';
+import dns from 'dns/promises';
+
+// Common disposable/temporary email domains to block
+const DISPOSABLE_DOMAINS = new Set([
+  'mailinator.com','guerrillamail.com','tempmail.com','throwaway.email',
+  'yopmail.com','trashmail.com','sharklasers.com','guerrillamailblock.com',
+  'grr.la','dispostable.com','maildrop.cc','10minutemail.com','temp-mail.org',
+  'fakeinbox.com','mailnesia.com','tempail.com','burnermail.io','mohmal.com',
+]);
+
+// Validate email format strictly
+function isValidEmailFormat(email) {
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+}
+
+// Check if domain has MX records (can receive mail)
+async function hasValidMX(domain) {
+  try {
+    const records = await dns.resolveMx(domain);
+    return records && records.length > 0;
+  } catch {
+    return false;
+  }
+}
 
 function getSupabaseAdmin() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://jpubdtpisbihimmrbyfh.supabase.co';
@@ -20,6 +44,24 @@ export async function POST(request) {
       }
       if (password.length < 8) {
         return NextResponse.json({ error: 'Password must be at least 8 characters.' }, { status: 400 });
+      }
+
+      // Layer 1: Strict format check
+      const cleanEmail = email.toLowerCase().trim();
+      if (!isValidEmailFormat(cleanEmail)) {
+        return NextResponse.json({ error: 'Please enter a valid email address.' }, { status: 400 });
+      }
+
+      // Layer 2: Block disposable email providers
+      const domain = cleanEmail.split('@')[1];
+      if (DISPOSABLE_DOMAINS.has(domain)) {
+        return NextResponse.json({ error: 'Temporary/disposable emails are not allowed. Please use a real email.' }, { status: 400 });
+      }
+
+      // Layer 3: Verify domain has MX records (can actually receive mail)
+      const validMX = await hasValidMX(domain);
+      if (!validMX) {
+        return NextResponse.json({ error: `The email domain "${domain}" does not exist or cannot receive emails. Please use a valid email.` }, { status: 400 });
       }
 
       // Check existing
