@@ -139,17 +139,7 @@ export default function Environments() {
                 </div>
               </div>
 
-              {/* Bottom nav on gym card */}
-              {i === 2 && (
-                <div className={styles.bottomNav}>
-                  <button className={styles.navItem}>Equipment</button>
-                  <Link href="/shop" className={`${styles.navItem} ${styles.navItemActive}`}
-                    style={{ background: "var(--color-accent)", color: "var(--color-black)" }}>
-                    Shop now
-                  </Link>
-                  <button className={styles.navItem}>Account</button>
-                </div>
-              )}
+
             </div>
           ))}
         </div>
