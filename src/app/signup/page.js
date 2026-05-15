@@ -41,16 +41,26 @@ export default function Signup() {
     setLoading(false);
 
     if (authError) {
-      setError(authError.message);
+      const msg = authError.message.toLowerCase();
+      if (msg.includes('already registered') || msg.includes('already been registered') || msg.includes('user already registered')) {
+        setError('This email is already registered. Please log in instead, or reset your password if you forgot it.');
+      } else {
+        setError(authError.message);
+      }
       return;
     }
 
-    // If auto-confirm is ON → session is returned → redirect immediately
+    // Supabase returns a fake user with no session for repeated signups
+    if (data?.user?.identities?.length === 0) {
+      setError('This email is already registered. Please log in instead, or reset your password if you forgot it.');
+      return;
+    }
+
+    // Auto-confirm ON → session returned → redirect
     if (data?.session) {
       setSuccess("Account created! Redirecting...");
       setTimeout(() => router.push("/"), 1000);
     } else {
-      // Email confirmation required
       setSuccess(`We've sent a confirmation link to ${email}. Please check your inbox (and spam folder), then log in.`);
     }
   };

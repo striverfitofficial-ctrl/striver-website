@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "@/context/AuthContext";
+import { supabase } from "@/lib/supabase";
 import styles from "../signup/Signup.module.css";
 
 export default function Login() {
@@ -15,23 +16,50 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setSuccess("");
     setLoading(true);
 
     const { error: authError } = await signIn({ email, password });
     setLoading(false);
 
     if (authError) {
-      setError(authError.message);
+      const msg = authError.message.toLowerCase();
+      if (msg.includes('invalid') || msg.includes('credentials')) {
+        setError('Invalid email or password. If you signed up via the Striver App, use that password — or click "Forgot Password" below.');
+      } else if (msg.includes('email not confirmed')) {
+        setError('Your email is not confirmed yet. Check your inbox for the confirmation link.');
+      } else {
+        setError(authError.message);
+      }
       return;
     }
 
     router.push("/");
+  };
+
+  const handleForgotPassword = async () => {
+    if (!email) {
+      setError('Please enter your email first, then click Forgot Password.');
+      return;
+    }
+    setError("");
+    setLoading(true);
+    const { error: resetError } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: typeof window !== 'undefined' ? `${window.location.origin}/login` : undefined,
+    });
+    setLoading(false);
+    if (resetError) {
+      setError(resetError.message);
+    } else {
+      setSuccess(`Password reset link sent to ${email}. Check your inbox.`);
+    }
   };
 
   const handleOAuth = async (provider) => {
@@ -61,6 +89,7 @@ export default function Login() {
         <p className={styles.subtitle}>Enter your credentials to access your account.</p>
 
         {error && <p className={styles.errorMsg}>{error}</p>}
+        {success && <p className={styles.successMsg}>{success}</p>}
 
         <div className={styles.socialButtons}>
           <button
@@ -115,6 +144,14 @@ export default function Login() {
               </button>
             </div>
           </div>
+
+          <button
+            type="button"
+            className={styles.forgotLink}
+            onClick={handleForgotPassword}
+          >
+            Forgot Password?
+          </button>
 
           <button type="submit" className={styles.submitBtn} disabled={loading}>
             {loading ? "Logging in..." : "Log In"}
