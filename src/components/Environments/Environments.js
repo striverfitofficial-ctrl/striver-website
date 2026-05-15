@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BsStars } from 'react-icons/bs';
 import styles from "./Environments.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -144,9 +143,6 @@ export default function Environments() {
               {i === 2 && (
                 <div className={styles.bottomNav}>
                   <button className={styles.navItem}>Equipment</button>
-                  <button className={`${styles.navItem} ${styles.navItemActive}`}>
-                    Quiz <BsStars style={{ marginLeft: '4px', verticalAlign: 'middle' }} />
-                  </button>
                   <Link href="/shop" className={`${styles.navItem} ${styles.navItemActive}`}
                     style={{ background: "var(--color-accent)", color: "var(--color-black)" }}>
                     Shop now

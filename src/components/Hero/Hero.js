@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./Hero.module.css";
+import FitnessQuiz from "../FitnessQuiz/FitnessQuiz";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,6 +72,9 @@ export default function Hero() {
         />
         <div className={styles.overlay} />
 
+        {/* FITNESS QUIZ ENTRY (Hero Mode) */}
+        <FitnessQuiz />
+
         <div className={styles.heroContent}>
           <h1 ref={headlineRef} className={styles.headline}>
             <span className={styles.headlineWord}>Elevate</span>{" "}
@@ -114,6 +118,7 @@ export default function Hero() {
               <span className={styles.logoText}>ADIDAS</span>
               <span className={styles.logoDot}>•</span>
               <span className={styles.logoText}>NIKE</span>
+              <span className={styles.logoDot}>•</span>
               <span className={styles.logoDot}>•</span>
               <span className={styles.logoText}>PELOTON</span>
               <span className={styles.logoDot}>•</span>

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
-import { BsStars } from 'react-icons/bs';
 import styles from './Wishlist.module.css';
 
 export default function WishlistPage() {
@@ -51,7 +50,7 @@ export default function WishlistPage() {
           <h1 className={styles.heading}>Join the Waitlist!</h1>
           <p className={styles.subtext}>
             Discover what's actually preventing you from staying consistent time,<br/>
-            structure, recovery, or motivation ! Start Quiz
+            structure, recovery, or motivation!
           </p>
 
           <div className={styles.actionRow}>
@@ -68,10 +67,7 @@ export default function WishlistPage() {
                 →
               </button>
             </form>
-            
-            <button className={styles.quizBtn}>
-              Quiz <BsStars style={{ marginLeft: '4px', verticalAlign: 'middle' }} />
-            </button>
+
           </div>
         </div>
 
