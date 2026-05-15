@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
-import { FaApple } from "react-icons/fa";
+import { FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "@/context/AuthContext";
 import styles from "../signup/Signup.module.css";
 
@@ -16,6 +16,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -97,12 +98,22 @@ export default function Login() {
 
           <div className={styles.inputGroup}>
             <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div className={styles.passwordWrapper}>
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button
+                type="button"
+                className={styles.eyeBtn}
+                onClick={() => setShowPassword((v) => !v)}
+                aria-label={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
+              </button>
+            </div>
           </div>
 
           <button type="submit" className={styles.submitBtn} disabled={loading}>

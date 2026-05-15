@@ -123,10 +123,12 @@
 .row {
   display: flex;
   gap: 16px;
+  width: 100%;
 }
 
 .row .inputGroup {
   flex: 1;
+  min-width: 0;
 }
 
 .inputGroup {
@@ -150,6 +152,8 @@
   color: #fff;
   font-size: 14px;
   transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .inputGroup input:focus {
@@ -161,6 +165,36 @@
   font-size: 11px;
   color: #888;
   margin-top: 2px;
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.passwordWrapper input {
+  width: 100%;
+  padding-right: 44px;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.eyeBtn:hover {
+  color: #fff;
 }
 
 .submitBtn {
