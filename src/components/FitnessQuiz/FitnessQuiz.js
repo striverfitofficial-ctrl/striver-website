@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import './FitnessQuiz.css';
+import { supabase } from '@/lib/supabase';
 
 // ============================================
 // QUIZ DATA
@@ -601,6 +602,10 @@ export default function FitnessQuiz() {
     height: 170,
   });
   const [showResults, setShowResults] = useState(false);
+  const sessionIdRef = useRef(
+    typeof crypto !== 'undefined' ? crypto.randomUUID() : Math.random().toString(36).slice(2)
+  );
+  const submittedRef = useRef(false);
 
   const step = STEPS[currentStep];
   const totalSteps = STEPS.length;
@@ -643,9 +648,45 @@ export default function FitnessQuiz() {
     setCurrentStep(0);
     setShowResults(false);
     setAnswers({ currentWeight: 70, targetWeight: 65, height: 170 });
+    submittedRef.current = false;
+    sessionIdRef.current = typeof crypto !== 'undefined' ? crypto.randomUUID() : Math.random().toString(36).slice(2);
   }, []);
 
   const results = useMemo(() => calculateResults(answers), [answers]);
+
+  // Submit quiz answers to Supabase when results are shown
+  useEffect(() => {
+    if (!showResults || submittedRef.current) return;
+    submittedRef.current = true;
+
+    const submitQuiz = async () => {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        await supabase.from('web_quiz_submissions').insert({
+          session_id: sessionIdRef.current,
+          user_id: user?.id || null,
+          answers,
+          results: {
+            dailyCal: results.dailyCal,
+            protein: results.protein,
+            carbs: results.carbs,
+            fat: results.fat,
+            bmi: results.bmi,
+            bfEstimate: results.bfEstimate,
+            programReco: results.programReco,
+            totalWeeks: results.totalWeeks,
+            currentWeight: results.currentWeight,
+            targetWeight: results.targetWeight,
+            goalSummary: results.goalSummary,
+          },
+          source: 'website',
+        });
+      } catch (err) {
+        console.error('Quiz submission error:', err);
+      }
+    };
+    submitQuiz();
+  }, [showResults, answers, results]);
 
   // Step content renderer
   const renderStepContent = () => (

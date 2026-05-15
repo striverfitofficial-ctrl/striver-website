@@ -1,13 +1,44 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
-import styles from "../signup/Signup.module.css"; // Reuse signup styles since the UI is basically the same
+import { useAuth } from "@/context/AuthContext";
+import styles from "../signup/Signup.module.css";
 
 export default function Login() {
+  const router = useRouter();
+  const { signIn, signInWithOAuth } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    const { error: authError } = await signIn({ email, password });
+    setLoading(false);
+
+    if (authError) {
+      setError(authError.message);
+      return;
+    }
+
+    router.push("/");
+  };
+
+  const handleOAuth = async (provider) => {
+    setError("");
+    const { error: oauthError } = await signInWithOAuth(provider);
+    if (oauthError) setError(oauthError.message);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.authBox}>
@@ -28,12 +59,22 @@ export default function Login() {
         <h1 className={styles.title}>Login</h1>
         <p className={styles.subtitle}>Enter your credentials to access your account.</p>
 
+        {error && <p className={styles.errorMsg}>{error}</p>}
+
         <div className={styles.socialButtons}>
-          <button className={styles.socialBtn} onClick={() => alert("Google authentication flow will be integrated here.")}>
+          <button
+            className={styles.socialBtn}
+            onClick={() => handleOAuth("google")}
+            type="button"
+          >
             <FcGoogle size={20} />
             Google
           </button>
-          <button className={styles.socialBtn} onClick={() => alert("Apple authentication flow will be integrated here.")}>
+          <button
+            className={styles.socialBtn}
+            onClick={() => handleOAuth("apple")}
+            type="button"
+          >
             <FaApple size={20} color="#fff" />
             Apple
           </button>
@@ -43,19 +84,29 @@ export default function Login() {
           <span>Or</span>
         </div>
 
-        <form className={styles.form} onSubmit={(e) => { e.preventDefault(); alert("Login form submitted. Backend integration pending."); }}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
-            <label>Email/ Mobile No</label>
-            <input type="text" placeholder="" />
+            <label>Email</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
 
           <div className={styles.inputGroup}>
             <label>Password</label>
-            <input type="password" placeholder="" />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
 
-          <button type="submit" className={styles.submitBtn}>
-            Log In
+          <button type="submit" className={styles.submitBtn} disabled={loading}>
+            {loading ? "Logging in..." : "Log In"}
           </button>
         </form>
 

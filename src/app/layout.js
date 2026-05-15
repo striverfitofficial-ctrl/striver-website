@@ -1,5 +1,6 @@
 import "./globals.css";
 import ScrollReveal from "../components/ScrollReveal/ScrollReveal";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata = {
   title: "Striverfit — Elevate Your Personal Fitness",
@@ -17,8 +18,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ScrollReveal />
-        {children}
+        <AuthProvider>
+          <ScrollReveal />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

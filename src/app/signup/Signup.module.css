@@ -45,6 +45,28 @@
   margin-bottom: 30px;
 }
 
+.errorMsg {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.successMsg {
+  background: rgba(0, 170, 19, 0.1);
+  color: #00AA13;
+  border: 1px solid rgba(0, 170, 19, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
 .socialButtons {
   display: flex;
   gap: 16px;
