@@ -45,11 +45,13 @@ export default function Signup() {
       return;
     }
 
-    // If email confirmation is required
-    if (data?.user && !data.session) {
-      setSuccess("Check your email for a confirmation link, then log in.");
+    // If auto-confirm is ON → session is returned → redirect immediately
+    if (data?.session) {
+      setSuccess("Account created! Redirecting...");
+      setTimeout(() => router.push("/"), 1000);
     } else {
-      router.push("/");
+      // Email confirmation required
+      setSuccess(`We've sent a confirmation link to ${email}. Please check your inbox (and spam folder), then log in.`);
     }
   };
 
