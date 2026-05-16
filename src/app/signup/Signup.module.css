@@ -161,6 +161,33 @@
   border-color: var(--color-accent);
 }
 
+.phoneInputWrapper {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.countrySelect {
+  padding: 14px 10px;
+  border-radius: 8px;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  outline: none;
+  width: 100px;
+}
+
+.countrySelect:focus {
+  border-color: var(--color-accent);
+}
+
+.phoneInput {
+  flex: 1;
+}
+
 .hint {
   font-size: 11px;
   color: #888;

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
-import { FaPhone, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaPhoneAlt, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "@/context/AuthContext";
 import styles from "./Signup.module.css";
 
@@ -16,6 +16,7 @@ export default function Signup() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [countryCode, setCountryCode] = useState("+1");
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
   const [isPhoneMode, setIsPhoneMode] = useState(false);
@@ -65,7 +66,9 @@ export default function Signup() {
     setSuccess("");
     setLoading(true);
 
-    const { error: otpError } = await signInWithPhone(phone);
+    const fullPhoneNumber = `${countryCode}${phone.replace(/\D/g, '')}`;
+
+    const { error: otpError } = await signInWithPhone(fullPhoneNumber);
     setLoading(false);
 
     if (otpError) {
@@ -83,7 +86,9 @@ export default function Signup() {
     setSuccess("");
     setLoading(true);
 
-    const { error: verifyError } = await verifyPhoneOtp(phone, otp);
+    const fullPhoneNumber = `${countryCode}${phone.replace(/\D/g, '')}`;
+
+    const { error: verifyError } = await verifyPhoneOtp(fullPhoneNumber, otp);
     setLoading(false);
 
     if (verifyError) {
@@ -136,7 +141,7 @@ export default function Signup() {
             }}
             type="button"
           >
-            <FaPhone size={18} color="#fff" />
+            <FaPhoneAlt size={16} color="#fff" />
             Phone
           </button>
         </div>
@@ -151,13 +156,29 @@ export default function Signup() {
               <>
                 <div className={styles.inputGroup}>
                   <label>Phone Number</label>
-                  <input
-                    type="tel"
-                    placeholder="+1234567890"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    required
-                  />
+                  <div className={styles.phoneInputWrapper}>
+                    <select 
+                      className={styles.countrySelect}
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                    >
+                      <option value="+1">US (+1)</option>
+                      <option value="+44">UK (+44)</option>
+                      <option value="+91">IN (+91)</option>
+                      <option value="+61">AU (+61)</option>
+                      <option value="+81">JP (+81)</option>
+                      <option value="+49">DE (+49)</option>
+                      <option value="+33">FR (+33)</option>
+                    </select>
+                    <input
+                      className={styles.phoneInput}
+                      type="tel"
+                      placeholder="1234567890"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      required
+                    />
+                  </div>
                 </div>
                 <button type="submit" className={styles.submitBtn} disabled={loading}>
                   {loading ? "Sending..." : "Send Code"}
