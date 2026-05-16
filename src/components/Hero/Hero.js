@@ -69,6 +69,8 @@ export default function Hero() {
           muted
           loop
           playsInline
+          controlsList="nodownload"
+          onContextMenu={(e) => e.preventDefault()}
         />
         <div className={styles.overlay} />
 

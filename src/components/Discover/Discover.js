@@ -89,6 +89,8 @@ export default function Discover() {
           muted
           loop
           playsInline
+          controlsList="nodownload"
+          onContextMenu={(e) => e.preventDefault()}
         />
         <div className={styles.videoOverlay} />
       </div>
@@ -128,6 +130,8 @@ export default function Discover() {
               controls
               autoPlay
               playsInline
+              controlsList="nodownload"
+              onContextMenu={(e) => e.preventDefault()}
             />
           </div>
         </div>

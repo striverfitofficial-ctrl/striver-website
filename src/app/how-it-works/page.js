@@ -58,6 +58,8 @@ export default function HowItWorksPage() {
                 preload="metadata"
                 muted
                 playsInline
+                controlsList="nodownload"
+                onContextMenu={(e) => e.preventDefault()}
               />
               
               <div className={styles.playOverlay}>
@@ -77,6 +79,9 @@ export default function HowItWorksPage() {
               src={activeVideo} 
               controls 
               autoPlay 
+              playsInline
+              controlsList="nodownload"
+              onContextMenu={(e) => e.preventDefault()}
               className={styles.activeVideo}
             />
           </div>
