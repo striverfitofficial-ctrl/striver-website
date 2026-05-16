@@ -53,10 +53,27 @@
   width: 100%;
   flex: 1;
   min-height: 0;
-  background-color: #111;
+  background: linear-gradient(135deg, rgba(17, 17, 17, 1), rgba(8, 8, 8, 1));
   border-radius: 24px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 20px 40px rgba(0, 0, 0, 0.5);
   overflow: visible;
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s ease;
+}
+
+.cardImageContainer:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 24px 60px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(34, 197, 94, 0.05);
+}
+
+.cardImageContainer .mainImage {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cardImageContainer:hover .mainImage {
+  transform: scale(1.03);
 }
 
 .imageOverflowMask {

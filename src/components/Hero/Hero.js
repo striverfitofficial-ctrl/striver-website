@@ -19,6 +19,7 @@ export default function Hero() {
   const strengthRef = useRef(null);
   const strengthTextRef = useRef(null);
   const strengthVisualsRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -53,6 +54,21 @@ export default function Hero() {
           "-=0.4"
         );
 
+      /* ===== Parallax on hero video ===== */
+      if (videoRef.current) {
+        gsap.to(videoRef.current, {
+          yPercent: 20,
+          scale: 1.1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -63,6 +79,7 @@ export default function Hero() {
       {/* ===== HERO ===== */}
       <div className={styles.hero}>
         <video
+          ref={videoRef}
           className={styles.videoBg}
           src="/videos/hero-bg.mp4"
           autoPlay
@@ -85,8 +102,8 @@ export default function Hero() {
             <br />
             <span className={styles.headlineWord}>fitness</span>{" "}
             <span className={styles.headlineWord}>to</span>{" "}
-            <span className={styles.headlineWord}>new</span>{" "}
-            <span className={styles.headlineWord}>heights.</span>
+            <span className={`${styles.headlineWord} ${styles.headlineAccent}`}>new</span>{" "}
+            <span className={`${styles.headlineWord} ${styles.headlineAccent}`}>heights.</span>
           </h1>
 
           <div ref={ctaRef} className={styles.ctaRow}>

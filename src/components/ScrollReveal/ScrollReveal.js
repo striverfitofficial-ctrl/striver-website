@@ -7,6 +7,7 @@ export default function ScrollReveal() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // ── Scroll-triggered reveal animations ──
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +24,28 @@ export default function ScrollReveal() {
     );
     targets.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    // ── Scroll progress bar ──
+    let progressBar = document.querySelector(".scroll-progress");
+    if (!progressBar) {
+      progressBar = document.createElement("div");
+      progressBar.className = "scroll-progress";
+      document.body.prepend(progressBar);
+    }
+
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${progress}%`;
+    };
+
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", updateProgress);
+    };
   }, [pathname]);
 
   return null;
