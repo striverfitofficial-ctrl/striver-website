@@ -1,21 +1,77 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { supabase } from '@/lib/supabase';
 import styles from './SharedFooter.module.css';
 
 export default function SharedFooter() {
+  const [nlEmail, setNlEmail] = useState('');
+  const [nlLoading, setNlLoading] = useState(false);
+  const [nlMsg, setNlMsg] = useState('');
+  const [nlIsError, setNlIsError] = useState(false);
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    setNlMsg('');
+    setNlIsError(false);
+
+    if (!nlEmail.trim()) return;
+
+    setNlLoading(true);
+
+    const { error: insertError } = await supabase
+      .from('web_newsletter_subscribers')
+      .insert({ email: nlEmail.trim().toLowerCase() });
+
+    setNlLoading(false);
+
+    if (insertError) {
+      if (insertError.code === '23505') {
+        setNlMsg('You are already subscribed!');
+        setNlIsError(false);
+      } else {
+        setNlMsg('Something went wrong. Please try again.');
+        setNlIsError(true);
+      }
+      return;
+    }
+
+    setNlMsg('Subscribed successfully! 🎉');
+    setNlIsError(false);
+    setNlEmail('');
+  };
+
   return (
     <footer className={styles.footerWrapper}>
       <div className={styles.footerTop}>
         <div className={styles.newsletterSection}>
           <h3 className={styles.newsletterTitle}>Stay updated on StriverFit</h3>
           <p className={styles.newsletterDesc}>Get the latest news on product updates, exclusive pre-order offers, and fitness tips.</p>
-          <form className={styles.newsletterForm} onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Enter your email address" className={styles.newsletterInput} required />
-            <button type="submit" className={styles.newsletterBtn}>Subscribe</button>
+          <form className={styles.newsletterForm} onSubmit={handleNewsletterSubmit}>
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className={styles.newsletterInput}
+              value={nlEmail}
+              onChange={(e) => setNlEmail(e.target.value)}
+              required
+            />
+            <button type="submit" className={styles.newsletterBtn} disabled={nlLoading}>
+              {nlLoading ? '...' : 'Subscribe'}
+            </button>
           </form>
+          {nlMsg && (
+            <p style={{
+              fontSize: '13px',
+              marginTop: '8px',
+              color: nlIsError ? '#dc2626' : '#00e676',
+              textAlign: 'center',
+            }}>
+              {nlMsg}
+            </p>
+          )}
         </div>
       </div>
       

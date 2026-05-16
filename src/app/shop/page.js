@@ -272,7 +272,7 @@ export default function ShopPage() {
       <section className={styles.detailsSection}>
         <div className={styles.detailsLeft}>
           {/* FAQs */}
-          <div className={styles.faqContainer}>
+          <div id="faq" className={styles.faqContainer}>
             <h2 className={styles.faqTitle}>FAQ<sub>s</sub></h2>
             {FAQS.map((faq, i) => (
               <div key={i} className={styles.faqItem}>
