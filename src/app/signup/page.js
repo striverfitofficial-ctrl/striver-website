@@ -5,17 +5,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
-import { FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaPhone, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "@/context/AuthContext";
 import styles from "./Signup.module.css";
 
 export default function Signup() {
   const router = useRouter();
-  const { signUp, signInWithOAuth } = useAuth();
+  const { signUp, signInWithOAuth, signInWithPhone, verifyPhoneOtp } = useAuth();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [otp, setOtp] = useState("");
+  const [isPhoneMode, setIsPhoneMode] = useState(false);
+  const [otpSent, setOtpSent] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
@@ -55,6 +59,42 @@ export default function Signup() {
     if (oauthError) setError(oauthError.message);
   };
 
+  const handleSendOtp = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+    setLoading(true);
+
+    const { error: otpError } = await signInWithPhone(phone);
+    setLoading(false);
+
+    if (otpError) {
+      setError(otpError.message);
+      return;
+    }
+
+    setOtpSent(true);
+    setSuccess("Verification code sent to your phone!");
+  };
+
+  const handleVerifyOtp = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+    setLoading(true);
+
+    const { error: verifyError } = await verifyPhoneOtp(phone, otp);
+    setLoading(false);
+
+    if (verifyError) {
+      setError(verifyError.message);
+      return;
+    }
+
+    setSuccess("Account verified! Redirecting...");
+    setTimeout(() => router.push("/"), 800);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.authBox}>
@@ -89,11 +129,15 @@ export default function Signup() {
           </button>
           <button
             className={styles.socialBtn}
-            onClick={() => handleOAuth("apple")}
+            onClick={() => {
+              setIsPhoneMode(true);
+              setError("");
+              setSuccess("");
+            }}
             type="button"
           >
-            <FaApple size={20} color="#fff" />
-            Apple
+            <FaPhone size={18} color="#fff" />
+            Phone
           </button>
         </div>
 
@@ -101,63 +145,114 @@ export default function Signup() {
           <span>Or</span>
         </div>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.row}>
+        {isPhoneMode ? (
+          <form className={styles.form} onSubmit={otpSent ? handleVerifyOtp : handleSendOtp}>
+            {!otpSent ? (
+              <>
+                <div className={styles.inputGroup}>
+                  <label>Phone Number</label>
+                  <input
+                    type="tel"
+                    placeholder="+1234567890"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className={styles.submitBtn} disabled={loading}>
+                  {loading ? "Sending..." : "Send Code"}
+                </button>
+              </>
+            ) : (
+              <>
+                <div className={styles.inputGroup}>
+                  <label>Verification Code</label>
+                  <input
+                    type="text"
+                    placeholder="123456"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className={styles.submitBtn} disabled={loading}>
+                  {loading ? "Verifying..." : "Verify & Sign Up"}
+                </button>
+              </>
+            )}
+            <button 
+              type="button" 
+              className={styles.link} 
+              style={{ marginTop: '1rem', background: 'none', border: 'none', cursor: 'pointer' }}
+              onClick={() => {
+                setIsPhoneMode(false);
+                setOtpSent(false);
+                setError("");
+                setSuccess("");
+              }}
+            >
+              Back to Email Sign Up
+            </button>
+          </form>
+        ) : (
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.row}>
+              <div className={styles.inputGroup}>
+                <label>First Name</label>
+                <input
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className={styles.inputGroup}>
+                <label>Last Name</label>
+                <input
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+
             <div className={styles.inputGroup}>
-              <label>First Name</label>
+              <label>Email</label>
               <input
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
+
             <div className={styles.inputGroup}>
-              <label>Last Name</label>
-              <input
-                type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
-              />
+              <label>Set Password</label>
+              <div className={styles.passwordWrapper}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <button
+                  type="button"
+                  className={styles.eyeBtn}
+                  onClick={() => setShowPassword((v) => !v)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
+                </button>
+              </div>
+              <span className={styles.hint}>Must be at least 8 characters</span>
             </div>
-          </div>
 
-          <div className={styles.inputGroup}>
-            <label>Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className={styles.inputGroup}>
-            <label>Set Password</label>
-            <div className={styles.passwordWrapper}>
-              <input
-                type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <button
-                type="button"
-                className={styles.eyeBtn}
-                onClick={() => setShowPassword((v) => !v)}
-                aria-label={showPassword ? "Hide password" : "Show password"}
-              >
-                {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
-              </button>
-            </div>
-            <span className={styles.hint}>Must be at least 8 characters</span>
-          </div>
-
-          <button type="submit" className={styles.submitBtn} disabled={loading}>
-            {loading ? "Creating Account..." : "Sign Up"}
-          </button>
-        </form>
+            <button type="submit" className={styles.submitBtn} disabled={loading}>
+              {loading ? "Creating Account..." : "Sign Up"}
+            </button>
+          </form>
+        )}
 
         <p className={styles.footerText}>
           Already have an account? <Link href="/login" className={styles.link}>Log in</Link>

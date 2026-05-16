@@ -1,0 +1,2632 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "eslint.config.mjs",
+      "file_type": "code",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L1",
+      "id": "eslint_config_mjs",
+      "community": 31,
+      "norm_label": "eslint.config.mjs"
+    },
+    {
+      "label": "eslintConfig",
+      "file_type": "code",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L4",
+      "id": "striver_web_eslint_config_eslintconfig",
+      "community": 31,
+      "norm_label": "eslintconfig"
+    },
+    {
+      "label": "jsconfig.json",
+      "file_type": "code",
+      "source_file": "jsconfig.json",
+      "source_location": "L1",
+      "id": "jsconfig_json",
+      "community": 10,
+      "norm_label": "jsconfig.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "jsconfig.json",
+      "source_location": "L2",
+      "id": "striver_web_jsconfig_compileroptions",
+      "community": 10,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "paths",
+      "file_type": "code",
+      "source_file": "jsconfig.json",
+      "source_location": "L3",
+      "id": "striver_web_jsconfig_compileroptions_paths",
+      "community": 10,
+      "norm_label": "paths"
+    },
+    {
+      "label": "@/*",
+      "file_type": "code",
+      "source_file": "jsconfig.json",
+      "source_location": "L4",
+      "id": "striver_web_jsconfig_paths",
+      "community": 10,
+      "norm_label": "@/*"
+    },
+    {
+      "label": "next.config.mjs",
+      "file_type": "code",
+      "source_file": "next.config.mjs",
+      "source_location": "L1",
+      "id": "next_config_mjs",
+      "community": 25,
+      "norm_label": "next.config.mjs"
+    },
+    {
+      "label": "nextConfig",
+      "file_type": "code",
+      "source_file": "next.config.mjs",
+      "source_location": "L2",
+      "id": "striver_web_next_config_nextconfig",
+      "community": 25,
+      "norm_label": "nextconfig"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "id": "package_json",
+      "community": 1,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "striver_web_package_name",
+      "community": 1,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "striver_web_package_version",
+      "community": 1,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "striver_web_package_private",
+      "community": 1,
+      "norm_label": "private"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "id": "striver_web_package_scripts",
+      "community": 8,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "id": "striver_web_package_scripts_dev",
+      "community": 8,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "id": "striver_web_package_scripts_build",
+      "community": 8,
+      "norm_label": "build"
+    },
+    {
+      "label": "start",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "id": "striver_web_package_scripts_start",
+      "community": 8,
+      "norm_label": "start"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "striver_web_package_scripts_lint",
+      "community": 8,
+      "norm_label": "lint"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "id": "striver_web_package_dependencies",
+      "community": 1,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@supabase/ssr",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "id": "striver_web_package_dependencies_supabase_ssr",
+      "community": 1,
+      "norm_label": "@supabase/ssr"
+    },
+    {
+      "label": "@supabase/supabase-js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "id": "striver_web_package_dependencies_supabase_supabase_js",
+      "community": 1,
+      "norm_label": "@supabase/supabase-js"
+    },
+    {
+      "label": "gsap",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "id": "striver_web_package_dependencies_gsap",
+      "community": 1,
+      "norm_label": "gsap"
+    },
+    {
+      "label": "next",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "id": "striver_web_package_dependencies_next",
+      "community": 1,
+      "norm_label": "next"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "id": "striver_web_package_dependencies_react",
+      "community": 1,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "id": "striver_web_package_dependencies_react_dom",
+      "community": 1,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "react-icons",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "id": "striver_web_package_dependencies_react_icons",
+      "community": 1,
+      "norm_label": "react-icons"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "id": "striver_web_package_devdependencies",
+      "community": 1,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "id": "striver_web_package_devdependencies_eslint",
+      "community": 1,
+      "norm_label": "eslint"
+    },
+    {
+      "label": "eslint-config-next",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "id": "striver_web_package_devdependencies_eslint_config_next",
+      "community": 1,
+      "norm_label": "eslint-config-next"
+    },
+    {
+      "label": "settings.json",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L1",
+      "id": "claude_settings_json",
+      "community": 12,
+      "norm_label": "settings.json"
+    },
+    {
+      "label": "hooks",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L2",
+      "id": "claude_settings_hooks",
+      "community": 12,
+      "norm_label": "hooks"
+    },
+    {
+      "label": "PreToolUse",
+      "file_type": "code",
+      "source_file": ".claude/settings.json",
+      "source_location": "L3",
+      "id": "claude_settings_hooks_pretooluse",
+      "community": 12,
+      "norm_label": "pretooluse"
+    },
+    {
+      "label": "settings.local.json",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L1",
+      "id": "claude_settings_local_json",
+      "community": 13,
+      "norm_label": "settings.local.json"
+    },
+    {
+      "label": "permissions",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L2",
+      "id": "claude_settings_local_permissions",
+      "community": 13,
+      "norm_label": "permissions"
+    },
+    {
+      "label": "allow",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "id": "claude_settings_local_permissions_allow",
+      "community": 13,
+      "norm_label": "allow"
+    },
+    {
+      "label": "project.json",
+      "file_type": "code",
+      "source_file": ".vercel/project.json",
+      "source_location": "L1",
+      "id": "vercel_project_json",
+      "community": 11,
+      "norm_label": "project.json"
+    },
+    {
+      "label": "projectId",
+      "file_type": "code",
+      "source_file": ".vercel/project.json",
+      "source_location": "L1",
+      "id": "vercel_project_projectid",
+      "community": 11,
+      "norm_label": "projectid"
+    },
+    {
+      "label": "orgId",
+      "file_type": "code",
+      "source_file": ".vercel/project.json",
+      "source_location": "L1",
+      "id": "vercel_project_orgid",
+      "community": 11,
+      "norm_label": "orgid"
+    },
+    {
+      "label": "projectName",
+      "file_type": "code",
+      "source_file": ".vercel/project.json",
+      "source_location": "L1",
+      "id": "vercel_project_projectname",
+      "community": 11,
+      "norm_label": "projectname"
+    },
+    {
+      "label": "layout.js",
+      "file_type": "code",
+      "source_file": "src/app/layout.js",
+      "source_location": "L1",
+      "id": "src_app_layout_js",
+      "community": 6,
+      "norm_label": "layout.js"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "src/app/layout.js",
+      "source_location": "L5",
+      "id": "app_layout_metadata",
+      "community": 6,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "src/app/layout.js",
+      "source_location": "L17",
+      "id": "app_layout_rootlayout",
+      "community": 6,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/page.js",
+      "source_location": "L1",
+      "id": "src_app_page_js",
+      "community": 0,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "src/app/page.js",
+      "source_location": "L13",
+      "id": "app_page_home",
+      "community": 0,
+      "norm_label": "home()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/accessories/page.js",
+      "source_location": "L1",
+      "id": "src_app_accessories_page_js",
+      "community": 16,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "ACCESSORIES",
+      "file_type": "code",
+      "source_file": "src/app/accessories/page.js",
+      "source_location": "L9",
+      "id": "accessories_page_accessories",
+      "community": 16,
+      "norm_label": "accessories"
+    },
+    {
+      "label": "AccessoriesPage()",
+      "file_type": "code",
+      "source_file": "src/app/accessories/page.js",
+      "source_location": "L22",
+      "id": "accessories_page_accessoriespage",
+      "community": 16,
+      "norm_label": "accessoriespage()"
+    },
+    {
+      "label": "route.js",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L1",
+      "id": "src_app_api_auth_route_js",
+      "community": 5,
+      "norm_label": "route.js"
+    },
+    {
+      "label": "DISPOSABLE_DOMAINS",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L7",
+      "id": "auth_route_disposable_domains",
+      "community": 5,
+      "norm_label": "disposable_domains"
+    },
+    {
+      "label": "isValidEmailFormat()",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L15",
+      "id": "auth_route_isvalidemailformat",
+      "community": 5,
+      "norm_label": "isvalidemailformat()"
+    },
+    {
+      "label": "hasValidMX()",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L20",
+      "id": "auth_route_hasvalidmx",
+      "community": 5,
+      "norm_label": "hasvalidmx()"
+    },
+    {
+      "label": "getSupabaseAdmin()",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L29",
+      "id": "auth_route_getsupabaseadmin",
+      "community": 5,
+      "norm_label": "getsupabaseadmin()"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L36",
+      "id": "auth_route_post",
+      "community": 5,
+      "norm_label": "post()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/blog/page.js",
+      "source_location": "L1",
+      "id": "src_app_blog_page_js",
+      "community": 19,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Blog()",
+      "file_type": "code",
+      "source_file": "src/app/blog/page.js",
+      "source_location": "L8",
+      "id": "blog_page_blog",
+      "community": 19,
+      "norm_label": "blog()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/contact/page.js",
+      "source_location": "L1",
+      "id": "src_app_contact_page_js",
+      "community": 20,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Contact()",
+      "file_type": "code",
+      "source_file": "src/app/contact/page.js",
+      "source_location": "L9",
+      "id": "contact_page_contact",
+      "community": 20,
+      "norm_label": "contact()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/gym/page.js",
+      "source_location": "L1",
+      "id": "src_app_gym_page_js",
+      "community": 14,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "src/app/gym/page.js",
+      "source_location": "L3",
+      "id": "gym_page_metadata",
+      "community": 14,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "GymEnvironment()",
+      "file_type": "code",
+      "source_file": "src/app/gym/page.js",
+      "source_location": "L8",
+      "id": "gym_page_gymenvironment",
+      "community": 14,
+      "norm_label": "gymenvironment()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/home/page.js",
+      "source_location": "L1",
+      "id": "src_app_home_page_js",
+      "community": 17,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "src/app/home/page.js",
+      "source_location": "L3",
+      "id": "home_page_metadata",
+      "community": 17,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "HomeEnvironment()",
+      "file_type": "code",
+      "source_file": "src/app/home/page.js",
+      "source_location": "L8",
+      "id": "home_page_homeenvironment",
+      "community": 17,
+      "norm_label": "homeenvironment()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/how-it-works/page.js",
+      "source_location": "L1",
+      "id": "src_app_how_it_works_page_js",
+      "community": 18,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "EXERCISES",
+      "file_type": "code",
+      "source_file": "src/app/how-it-works/page.js",
+      "source_location": "L8",
+      "id": "how_it_works_page_exercises",
+      "community": 18,
+      "norm_label": "exercises"
+    },
+    {
+      "label": "HowItWorksPage()",
+      "file_type": "code",
+      "source_file": "src/app/how-it-works/page.js",
+      "source_location": "L21",
+      "id": "how_it_works_page_howitworkspage",
+      "community": 18,
+      "norm_label": "howitworkspage()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/login/page.js",
+      "source_location": "L1",
+      "id": "src_app_login_page_js",
+      "community": 3,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Login()",
+      "file_type": "code",
+      "source_file": "src/app/login/page.js",
+      "source_location": "L12",
+      "id": "login_page_login",
+      "community": 3,
+      "norm_label": "login()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/office/page.js",
+      "source_location": "L1",
+      "id": "src_app_office_page_js",
+      "community": 15,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "src/app/office/page.js",
+      "source_location": "L3",
+      "id": "office_page_metadata",
+      "community": 15,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "OfficeEnvironment()",
+      "file_type": "code",
+      "source_file": "src/app/office/page.js",
+      "source_location": "L8",
+      "id": "office_page_officeenvironment",
+      "community": 15,
+      "norm_label": "officeenvironment()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/press/page.js",
+      "source_location": "L1",
+      "id": "src_app_press_page_js",
+      "community": 29,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Press()",
+      "file_type": "code",
+      "source_file": "src/app/press/page.js",
+      "source_location": "L6",
+      "id": "press_page_press",
+      "community": 29,
+      "norm_label": "press()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/privacy/page.js",
+      "source_location": "L1",
+      "id": "src_app_privacy_page_js",
+      "community": 26,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Privacy()",
+      "file_type": "code",
+      "source_file": "src/app/privacy/page.js",
+      "source_location": "L6",
+      "id": "privacy_page_privacy",
+      "community": 26,
+      "norm_label": "privacy()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/return/page.js",
+      "source_location": "L1",
+      "id": "src_app_return_page_js",
+      "community": 27,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Return()",
+      "file_type": "code",
+      "source_file": "src/app/return/page.js",
+      "source_location": "L6",
+      "id": "return_page_return",
+      "community": 27,
+      "norm_label": "return()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/reviews/page.js",
+      "source_location": "L1",
+      "id": "src_app_reviews_page_js",
+      "community": 28,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Reviews()",
+      "file_type": "code",
+      "source_file": "src/app/reviews/page.js",
+      "source_location": "L6",
+      "id": "reviews_page_reviews",
+      "community": 28,
+      "norm_label": "reviews()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L1",
+      "id": "src_app_shop_page_js",
+      "community": 7,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "FAQS",
+      "file_type": "code",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L8",
+      "id": "shop_page_faqs",
+      "community": 7,
+      "norm_label": "faqs"
+    },
+    {
+      "label": "SPECS",
+      "file_type": "code",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L55",
+      "id": "shop_page_specs",
+      "community": 7,
+      "norm_label": "specs"
+    },
+    {
+      "label": "SLIDER_IMAGES",
+      "file_type": "code",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L65",
+      "id": "shop_page_slider_images",
+      "community": 7,
+      "norm_label": "slider_images"
+    },
+    {
+      "label": "ShopPage()",
+      "file_type": "code",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L74",
+      "id": "shop_page_shoppage",
+      "community": 7,
+      "norm_label": "shoppage()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/signup/page.js",
+      "source_location": "L1",
+      "id": "src_app_signup_page_js",
+      "community": 3,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Signup()",
+      "file_type": "code",
+      "source_file": "src/app/signup/page.js",
+      "source_location": "L12",
+      "id": "signup_page_signup",
+      "community": 3,
+      "norm_label": "signup()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/terms/page.js",
+      "source_location": "L1",
+      "id": "src_app_terms_page_js",
+      "community": 32,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "Terms()",
+      "file_type": "code",
+      "source_file": "src/app/terms/page.js",
+      "source_location": "L6",
+      "id": "terms_page_terms",
+      "community": 32,
+      "norm_label": "terms()"
+    },
+    {
+      "label": "page.js",
+      "file_type": "code",
+      "source_file": "src/app/wishlist/page.js",
+      "source_location": "L1",
+      "id": "src_app_wishlist_page_js",
+      "community": 30,
+      "norm_label": "page.js"
+    },
+    {
+      "label": "WishlistPage()",
+      "file_type": "code",
+      "source_file": "src/app/wishlist/page.js",
+      "source_location": "L9",
+      "id": "wishlist_page_wishlistpage",
+      "community": 30,
+      "norm_label": "wishlistpage()"
+    },
+    {
+      "label": "About.js",
+      "file_type": "code",
+      "source_file": "src/components/About/About.js",
+      "source_location": "L1",
+      "id": "src_components_about_about_js",
+      "community": 9,
+      "norm_label": "about.js"
+    },
+    {
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "src/components/About/About.js",
+      "source_location": "L17",
+      "id": "about_about_about",
+      "community": 9,
+      "norm_label": "about()"
+    },
+    {
+      "label": "AppFeatures.js",
+      "file_type": "code",
+      "source_file": "src/components/AppFeatures/AppFeatures.js",
+      "source_location": "L1",
+      "id": "src_components_appfeatures_appfeatures_js",
+      "community": 0,
+      "norm_label": "appfeatures.js"
+    },
+    {
+      "label": "AppFeatures()",
+      "file_type": "code",
+      "source_file": "src/components/AppFeatures/AppFeatures.js",
+      "source_location": "L11",
+      "id": "appfeatures_appfeatures_appfeatures",
+      "community": 0,
+      "norm_label": "appfeatures()"
+    },
+    {
+      "label": "Discover.js",
+      "file_type": "code",
+      "source_file": "src/components/Discover/Discover.js",
+      "source_location": "L1",
+      "id": "src_components_discover_discover_js",
+      "community": 0,
+      "norm_label": "discover.js"
+    },
+    {
+      "label": "NAV_ITEMS",
+      "file_type": "code",
+      "source_file": "src/components/Discover/Discover.js",
+      "source_location": "L12",
+      "id": "discover_discover_nav_items",
+      "community": 0,
+      "norm_label": "nav_items"
+    },
+    {
+      "label": "Discover()",
+      "file_type": "code",
+      "source_file": "src/components/Discover/Discover.js",
+      "source_location": "L14",
+      "id": "discover_discover_discover",
+      "community": 0,
+      "norm_label": "discover()"
+    },
+    {
+      "label": "EnvironmentPage.js",
+      "file_type": "code",
+      "source_file": "src/components/EnvironmentPage/EnvironmentPage.js",
+      "source_location": "L1",
+      "id": "src_components_environmentpage_environmentpage_js",
+      "community": 21,
+      "norm_label": "environmentpage.js"
+    },
+    {
+      "label": "EnvironmentPage()",
+      "file_type": "code",
+      "source_file": "src/components/EnvironmentPage/EnvironmentPage.js",
+      "source_location": "L4",
+      "id": "environmentpage_environmentpage_environmentpage",
+      "community": 21,
+      "norm_label": "environmentpage()"
+    },
+    {
+      "label": "Environments.js",
+      "file_type": "code",
+      "source_file": "src/components/Environments/Environments.js",
+      "source_location": "L1",
+      "id": "src_components_environments_environments_js",
+      "community": 0,
+      "norm_label": "environments.js"
+    },
+    {
+      "label": "cardsData",
+      "file_type": "code",
+      "source_file": "src/components/Environments/Environments.js",
+      "source_location": "L12",
+      "id": "environments_environments_cardsdata",
+      "community": 0,
+      "norm_label": "cardsdata"
+    },
+    {
+      "label": "Environments()",
+      "file_type": "code",
+      "source_file": "src/components/Environments/Environments.js",
+      "source_location": "L36",
+      "id": "environments_environments_environments",
+      "community": 0,
+      "norm_label": "environments()"
+    },
+    {
+      "label": "FeaturesScroll.js",
+      "file_type": "code",
+      "source_file": "src/components/FeaturesScroll/FeaturesScroll.js",
+      "source_location": "L1",
+      "id": "src_components_featuresscroll_featuresscroll_js",
+      "community": 0,
+      "norm_label": "featuresscroll.js"
+    },
+    {
+      "label": "features",
+      "file_type": "code",
+      "source_file": "src/components/FeaturesScroll/FeaturesScroll.js",
+      "source_location": "L10",
+      "id": "featuresscroll_featuresscroll_features",
+      "community": 0,
+      "norm_label": "features"
+    },
+    {
+      "label": "FeaturesScroll()",
+      "file_type": "code",
+      "source_file": "src/components/FeaturesScroll/FeaturesScroll.js",
+      "source_location": "L68",
+      "id": "featuresscroll_featuresscroll_featuresscroll",
+      "community": 0,
+      "norm_label": "featuresscroll()"
+    },
+    {
+      "label": "FitnessQuiz.js",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L1",
+      "id": "src_components_fitnessquiz_fitnessquiz_js",
+      "community": 2,
+      "norm_label": "fitnessquiz.js"
+    },
+    {
+      "label": "STEPS",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L10",
+      "id": "fitnessquiz_fitnessquiz_steps",
+      "community": 2,
+      "norm_label": "steps"
+    },
+    {
+      "label": "calculateResults()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L150",
+      "id": "fitnessquiz_fitnessquiz_calculateresults",
+      "community": 2,
+      "norm_label": "calculateresults()"
+    },
+    {
+      "label": "ProgressBar()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L321",
+      "id": "fitnessquiz_fitnessquiz_progressbar",
+      "community": 2,
+      "norm_label": "progressbar()"
+    },
+    {
+      "label": "ChipSelector()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L335",
+      "id": "fitnessquiz_fitnessquiz_chipselector",
+      "community": 2,
+      "norm_label": "chipselector()"
+    },
+    {
+      "label": "NumberInput()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L355",
+      "id": "fitnessquiz_fitnessquiz_numberinput",
+      "community": 2,
+      "norm_label": "numberinput()"
+    },
+    {
+      "label": "DoubleNumberInput()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L375",
+      "id": "fitnessquiz_fitnessquiz_doublenumberinput",
+      "community": 2,
+      "norm_label": "doublenumberinput()"
+    },
+    {
+      "label": "WeightTimelineGraph()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L400",
+      "id": "fitnessquiz_fitnessquiz_weighttimelinegraph",
+      "community": 2,
+      "norm_label": "weighttimelinegraph()"
+    },
+    {
+      "label": "Results()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L462",
+      "id": "fitnessquiz_fitnessquiz_results",
+      "community": 2,
+      "norm_label": "results()"
+    },
+    {
+      "label": "QuizBackground()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L585",
+      "id": "fitnessquiz_fitnessquiz_quizbackground",
+      "community": 2,
+      "norm_label": "quizbackground()"
+    },
+    {
+      "label": "FitnessQuiz()",
+      "file_type": "code",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L617",
+      "id": "fitnessquiz_fitnessquiz_fitnessquiz",
+      "community": 2,
+      "norm_label": "fitnessquiz()"
+    },
+    {
+      "label": "Hero.js",
+      "file_type": "code",
+      "source_file": "src/components/Hero/Hero.js",
+      "source_location": "L1",
+      "id": "src_components_hero_hero_js",
+      "community": 2,
+      "norm_label": "hero.js"
+    },
+    {
+      "label": "Hero()",
+      "file_type": "code",
+      "source_file": "src/components/Hero/Hero.js",
+      "source_location": "L13",
+      "id": "hero_hero_hero",
+      "community": 2,
+      "norm_label": "hero()"
+    },
+    {
+      "label": "Navbar.js",
+      "file_type": "code",
+      "source_file": "src/components/Navbar/Navbar.js",
+      "source_location": "L1",
+      "id": "src_components_navbar_navbar_js",
+      "community": 3,
+      "norm_label": "navbar.js"
+    },
+    {
+      "label": "NAV_ITEMS",
+      "file_type": "code",
+      "source_file": "src/components/Navbar/Navbar.js",
+      "source_location": "L10",
+      "id": "navbar_navbar_nav_items",
+      "community": 3,
+      "norm_label": "nav_items"
+    },
+    {
+      "label": "Navbar()",
+      "file_type": "code",
+      "source_file": "src/components/Navbar/Navbar.js",
+      "source_location": "L12",
+      "id": "navbar_navbar_navbar",
+      "community": 3,
+      "norm_label": "navbar()"
+    },
+    {
+      "label": "Prebook.js",
+      "file_type": "code",
+      "source_file": "src/components/Prebook/Prebook.js",
+      "source_location": "L1",
+      "id": "src_components_prebook_prebook_js",
+      "community": 0,
+      "norm_label": "prebook.js"
+    },
+    {
+      "label": "images",
+      "file_type": "code",
+      "source_file": "src/components/Prebook/Prebook.js",
+      "source_location": "L8",
+      "id": "prebook_prebook_images",
+      "community": 0,
+      "norm_label": "images"
+    },
+    {
+      "label": "Prebook()",
+      "file_type": "code",
+      "source_file": "src/components/Prebook/Prebook.js",
+      "source_location": "L14",
+      "id": "prebook_prebook_prebook",
+      "community": 0,
+      "norm_label": "prebook()"
+    },
+    {
+      "label": "ScrollReveal.js",
+      "file_type": "code",
+      "source_file": "src/components/ScrollReveal/ScrollReveal.js",
+      "source_location": "L1",
+      "id": "src_components_scrollreveal_scrollreveal_js",
+      "community": 6,
+      "norm_label": "scrollreveal.js"
+    },
+    {
+      "label": "ScrollReveal()",
+      "file_type": "code",
+      "source_file": "src/components/ScrollReveal/ScrollReveal.js",
+      "source_location": "L6",
+      "id": "scrollreveal_scrollreveal_scrollreveal",
+      "community": 6,
+      "norm_label": "scrollreveal()"
+    },
+    {
+      "label": "SharedFooter.js",
+      "file_type": "code",
+      "source_file": "src/components/SharedFooter/SharedFooter.js",
+      "source_location": "L1",
+      "id": "src_components_sharedfooter_sharedfooter_js",
+      "community": 9,
+      "norm_label": "sharedfooter.js"
+    },
+    {
+      "label": "SharedFooter()",
+      "file_type": "code",
+      "source_file": "src/components/SharedFooter/SharedFooter.js",
+      "source_location": "L8",
+      "id": "sharedfooter_sharedfooter_sharedfooter",
+      "community": 9,
+      "norm_label": "sharedfooter()"
+    },
+    {
+      "label": "SocialProof.js",
+      "file_type": "code",
+      "source_file": "src/components/SocialProof/SocialProof.js",
+      "source_location": "L1",
+      "id": "src_components_socialproof_socialproof_js",
+      "community": 0,
+      "norm_label": "socialproof.js"
+    },
+    {
+      "label": "SocialProof()",
+      "file_type": "code",
+      "source_file": "src/components/SocialProof/SocialProof.js",
+      "source_location": "L10",
+      "id": "socialproof_socialproof_socialproof",
+      "community": 0,
+      "norm_label": "socialproof()"
+    },
+    {
+      "label": "AuthContext.js",
+      "file_type": "code",
+      "source_file": "src/context/AuthContext.js",
+      "source_location": "L1",
+      "id": "src_context_authcontext_js",
+      "community": 3,
+      "norm_label": "authcontext.js"
+    },
+    {
+      "label": "AuthContext",
+      "file_type": "code",
+      "source_file": "src/context/AuthContext.js",
+      "source_location": "L5",
+      "id": "context_authcontext_authcontext",
+      "community": 3,
+      "norm_label": "authcontext"
+    },
+    {
+      "label": "AuthProvider()",
+      "file_type": "code",
+      "source_file": "src/context/AuthContext.js",
+      "source_location": "L9",
+      "id": "context_authcontext_authprovider",
+      "community": 3,
+      "norm_label": "authprovider()"
+    },
+    {
+      "label": "useAuth()",
+      "file_type": "code",
+      "source_file": "src/context/AuthContext.js",
+      "source_location": "L91",
+      "id": "context_authcontext_useauth",
+      "community": 3,
+      "norm_label": "useauth()"
+    },
+    {
+      "label": "supabase-server.js",
+      "file_type": "code",
+      "source_file": "src/lib/supabase-server.js",
+      "source_location": "L1",
+      "id": "src_lib_supabase_server_js",
+      "community": 23,
+      "norm_label": "supabase-server.js"
+    },
+    {
+      "label": "supabaseAdmin",
+      "file_type": "code",
+      "source_file": "src/lib/supabase-server.js",
+      "source_location": "L7",
+      "id": "lib_supabase_server_supabaseadmin",
+      "community": 23,
+      "norm_label": "supabaseadmin"
+    },
+    {
+      "label": "supabase.js",
+      "file_type": "code",
+      "source_file": "src/lib/supabase.js",
+      "source_location": "L1",
+      "id": "src_lib_supabase_js",
+      "community": 24,
+      "norm_label": "supabase.js"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "src/lib/supabase.js",
+      "source_location": "L6",
+      "id": "lib_supabase_supabase",
+      "community": 24,
+      "norm_label": "supabase"
+    },
+    {
+      "label": "Project Instructions (CLAUDE.md)",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "claude_md_project_instructions",
+      "community": 22,
+      "norm_label": "project instructions (claude.md)"
+    },
+    {
+      "label": "Project Overview (README)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "readme_project_overview",
+      "community": 4,
+      "norm_label": "project overview (readme)"
+    },
+    {
+      "label": "Vercel Configuration Info",
+      "file_type": "document",
+      "source_file": ".vercel/README.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "vercel_readme_config",
+      "community": 4,
+      "norm_label": "vercel configuration info"
+    },
+    {
+      "label": "Next.js Framework",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": "https://nextjs.org",
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "nextjs_framework",
+      "community": 4,
+      "norm_label": "next.js framework"
+    },
+    {
+      "label": "create-next-app Bootstrapper",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": "https://nextjs.org/docs/app/api-reference/cli/create-next-app",
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "create_next_app",
+      "community": 4,
+      "norm_label": "create-next-app bootstrapper"
+    },
+    {
+      "label": "Vercel Deployment Platform",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": "https://vercel.com",
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "vercel_platform",
+      "community": 4,
+      "norm_label": "vercel deployment platform"
+    },
+    {
+      "label": "Geist Font Family",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": "https://vercel.com/font",
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "geist_font",
+      "community": 4,
+      "norm_label": "geist font family"
+    },
+    {
+      "label": "next/font Optimization",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": "https://nextjs.org/docs/app/building-your-application/optimizing/fonts",
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "next_font_optimization",
+      "community": 4,
+      "norm_label": "next/font optimization"
+    },
+    {
+      "label": "Graphify Knowledge Graph",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "graphify_knowledge_graph",
+      "community": 22,
+      "norm_label": "graphify knowledge graph"
+    },
+    {
+      "label": "app/page.js Entry Page",
+      "file_type": "code",
+      "source_file": "app/page.js",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2026-05-16",
+      "author": null,
+      "contributor": null,
+      "id": "app_page_js",
+      "community": 4,
+      "norm_label": "app/page.js entry page"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "eslint.config.mjs",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "eslint_config_mjs",
+      "target": "striver_web_eslint_config_eslintconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "jsconfig_json",
+      "target": "striver_web_jsconfig_compileroptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "striver_web_jsconfig_compileroptions",
+      "target": "striver_web_jsconfig_compileroptions_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "jsconfig.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "striver_web_jsconfig_compileroptions_paths",
+      "target": "striver_web_jsconfig_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "next.config.mjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "next_config_mjs",
+      "target": "striver_web_next_config_nextconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "striver_web_package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "striver_web_package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "striver_web_package_private",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "striver_web_package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "striver_web_package_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "package_json",
+      "target": "striver_web_package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "striver_web_package_scripts",
+      "target": "striver_web_package_scripts_dev",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "striver_web_package_scripts",
+      "target": "striver_web_package_scripts_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "striver_web_package_scripts",
+      "target": "striver_web_package_scripts_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "striver_web_package_scripts",
+      "target": "striver_web_package_scripts_lint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "striver_web_package_dependencies",
+      "target": "striver_web_package_dependencies_supabase_ssr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "striver_web_package_dependencies",
+      "target": "striver_web_package_dependencies_supabase_supabase_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "striver_web_package_dependencies",
+      "target": "striver_web_package_dependencies_gsap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "striver_web_package_dependencies",
+      "target": "striver_web_package_dependencies_next",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "striver_web_package_dependencies",
+      "target": "striver_web_package_dependencies_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "striver_web_package_dependencies",
+      "target": "striver_web_package_dependencies_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "striver_web_package_dependencies",
+      "target": "striver_web_package_dependencies_react_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "striver_web_package_devdependencies",
+      "target": "striver_web_package_devdependencies_eslint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "striver_web_package_devdependencies",
+      "target": "striver_web_package_devdependencies_eslint_config_next",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "claude_settings_json",
+      "target": "claude_settings_hooks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "claude_settings_hooks",
+      "target": "claude_settings_hooks_pretooluse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "claude_settings_local_json",
+      "target": "claude_settings_local_permissions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "claude_settings_local_permissions",
+      "target": "claude_settings_local_permissions_allow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".vercel/project.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "vercel_project_json",
+      "target": "vercel_project_projectid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".vercel/project.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "vercel_project_json",
+      "target": "vercel_project_orgid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".vercel/project.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "vercel_project_json",
+      "target": "vercel_project_projectname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_layout_js",
+      "target": "src_components_scrollreveal_scrollreveal_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_layout_js",
+      "target": "app_layout_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.js",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_app_layout_js",
+      "target": "app_layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_navbar_navbar_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_hero_hero_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_discover_discover_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_appfeatures_appfeatures_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_featuresscroll_featuresscroll_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_environments_environments_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_socialproof_socialproof_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_prebook_prebook_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "src_components_about_about_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/page.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_app_page_js",
+      "target": "app_page_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/accessories/page.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_app_accessories_page_js",
+      "target": "accessories_page_accessories",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/accessories/page.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "src_app_accessories_page_js",
+      "target": "accessories_page_accessoriespage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_app_api_auth_route_js",
+      "target": "auth_route_disposable_domains",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_app_api_auth_route_js",
+      "target": "auth_route_isvalidemailformat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_app_api_auth_route_js",
+      "target": "auth_route_hasvalidmx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "src_app_api_auth_route_js",
+      "target": "auth_route_getsupabaseadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "src_app_api_auth_route_js",
+      "target": "auth_route_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "auth_route_post",
+      "target": "auth_route_isvalidemailformat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "auth_route_post",
+      "target": "auth_route_hasvalidmx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/api/auth/route.js",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "auth_route_post",
+      "target": "auth_route_getsupabaseadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/blog/page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_blog_page_js",
+      "target": "blog_page_blog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/contact/page.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_app_contact_page_js",
+      "target": "contact_page_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/gym/page.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_gym_page_js",
+      "target": "gym_page_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/gym/page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_gym_page_js",
+      "target": "gym_page_gymenvironment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/home/page.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_home_page_js",
+      "target": "home_page_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/home/page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_home_page_js",
+      "target": "home_page_homeenvironment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/how-it-works/page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_how_it_works_page_js",
+      "target": "how_it_works_page_exercises",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/how-it-works/page.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_app_how_it_works_page_js",
+      "target": "how_it_works_page_howitworkspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/login/page.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_app_login_page_js",
+      "target": "login_page_login",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/login/page.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "login_page_login",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/office/page.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_app_office_page_js",
+      "target": "office_page_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/office/page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_office_page_js",
+      "target": "office_page_officeenvironment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/press/page.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_press_page_js",
+      "target": "press_page_press",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/privacy/page.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_privacy_page_js",
+      "target": "privacy_page_privacy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/return/page.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_return_page_js",
+      "target": "return_page_return",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/reviews/page.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_reviews_page_js",
+      "target": "reviews_page_reviews",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app_shop_page_js",
+      "target": "shop_page_faqs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "src_app_shop_page_js",
+      "target": "shop_page_specs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "src_app_shop_page_js",
+      "target": "shop_page_slider_images",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/shop/page.js",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "src_app_shop_page_js",
+      "target": "shop_page_shoppage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/signup/page.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_app_signup_page_js",
+      "target": "signup_page_signup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/app/signup/page.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "signup_page_signup",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/terms/page.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app_terms_page_js",
+      "target": "terms_page_terms",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/wishlist/page.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_app_wishlist_page_js",
+      "target": "wishlist_page_wishlistpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About/About.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_about_about_js",
+      "target": "src_components_sharedfooter_sharedfooter_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/About/About.js",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_components_about_about_js",
+      "target": "about_about_about",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AppFeatures/AppFeatures.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_components_appfeatures_appfeatures_js",
+      "target": "appfeatures_appfeatures_appfeatures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Discover/Discover.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_discover_discover_js",
+      "target": "discover_discover_nav_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Discover/Discover.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_discover_discover_js",
+      "target": "discover_discover_discover",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/EnvironmentPage/EnvironmentPage.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_environmentpage_environmentpage_js",
+      "target": "environmentpage_environmentpage_environmentpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Environments/Environments.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_environments_environments_js",
+      "target": "environments_environments_cardsdata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Environments/Environments.js",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "src_components_environments_environments_js",
+      "target": "environments_environments_environments",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FeaturesScroll/FeaturesScroll.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_featuresscroll_featuresscroll_js",
+      "target": "featuresscroll_featuresscroll_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FeaturesScroll/FeaturesScroll.js",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "src_components_featuresscroll_featuresscroll_js",
+      "target": "featuresscroll_featuresscroll_featuresscroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_calculateresults",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L321",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_progressbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L335",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_chipselector",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_numberinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L375",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_doublenumberinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L400",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_weighttimelinegraph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L462",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_results",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L585",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_quizbackground",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/FitnessQuiz/FitnessQuiz.js",
+      "source_location": "L617",
+      "weight": 1.0,
+      "source": "src_components_fitnessquiz_fitnessquiz_js",
+      "target": "fitnessquiz_fitnessquiz_fitnessquiz",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Hero/Hero.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_components_hero_hero_js",
+      "target": "src_components_fitnessquiz_fitnessquiz_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Hero/Hero.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_components_hero_hero_js",
+      "target": "hero_hero_hero",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Navbar/Navbar.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_navbar_navbar_js",
+      "target": "navbar_navbar_nav_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Navbar/Navbar.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_navbar_navbar_js",
+      "target": "navbar_navbar_navbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/components/Navbar/Navbar.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "navbar_navbar_navbar",
+      "target": "context_authcontext_useauth"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Prebook/Prebook.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_components_prebook_prebook_js",
+      "target": "prebook_prebook_images",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Prebook/Prebook.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_prebook_prebook_js",
+      "target": "prebook_prebook_prebook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ScrollReveal/ScrollReveal.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_scrollreveal_scrollreveal_js",
+      "target": "scrollreveal_scrollreveal_scrollreveal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SharedFooter/SharedFooter.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_components_sharedfooter_sharedfooter_js",
+      "target": "sharedfooter_sharedfooter_sharedfooter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/SocialProof/SocialProof.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_socialproof_socialproof_js",
+      "target": "socialproof_socialproof_socialproof",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/AuthContext.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_context_authcontext_js",
+      "target": "context_authcontext_authcontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/AuthContext.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_context_authcontext_js",
+      "target": "context_authcontext_authprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/AuthContext.js",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "src_context_authcontext_js",
+      "target": "context_authcontext_useauth",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/supabase-server.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_lib_supabase_server_js",
+      "target": "lib_supabase_server_supabaseadmin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/lib/supabase.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_lib_supabase_js",
+      "target": "lib_supabase_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 3",
+      "weight": 1.0,
+      "source": "claude_md_project_instructions",
+      "target": "graphify_knowledge_graph"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 1",
+      "weight": 1.0,
+      "source": "readme_project_overview",
+      "target": "nextjs_framework"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 1",
+      "weight": 1.0,
+      "source": "readme_project_overview",
+      "target": "create_next_app"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 34",
+      "weight": 1.0,
+      "source": "readme_project_overview",
+      "target": "vercel_platform"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 22",
+      "weight": 1.0,
+      "source": "readme_project_overview",
+      "target": "geist_font"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 22",
+      "weight": 1.0,
+      "source": "readme_project_overview",
+      "target": "next_font_optimization"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 19",
+      "weight": 0.9,
+      "source": "readme_project_overview",
+      "target": "app_page_js"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".vercel/README.txt",
+      "source_location": "line 2",
+      "weight": 1.0,
+      "source": "vercel_readme_config",
+      "target": "vercel_platform"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 0.8,
+      "source": "nextjs_framework",
+      "target": "vercel_platform"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "line 1",
+      "weight": 0.9,
+      "source": "create_next_app",
+      "target": "nextjs_framework"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 22",
+      "weight": 1.0,
+      "source": "next_font_optimization",
+      "target": "geist_font"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "1716148e929831447daa3811ff7b29892216c365"
+}

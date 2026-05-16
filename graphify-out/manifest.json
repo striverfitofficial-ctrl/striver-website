@@ -1,0 +1,227 @@
+{
+  "C:\\Striver_Website\\striver-web\\eslint.config.mjs": {
+    "mtime": 1778522530.894928,
+    "ast_hash": "bcb00e240634dd9448e57386fdff1902",
+    "semantic_hash": "bcb00e240634dd9448e57386fdff1902"
+  },
+  "C:\\Striver_Website\\striver-web\\jsconfig.json": {
+    "mtime": 1778522542.7525373,
+    "ast_hash": "373b4d3b81ad935084b8292c8233423e",
+    "semantic_hash": "373b4d3b81ad935084b8292c8233423e"
+  },
+  "C:\\Striver_Website\\striver-web\\next.config.mjs": {
+    "mtime": 1778660397.944003,
+    "ast_hash": "81bb918b0f25818f511b8d0b20e21762",
+    "semantic_hash": "81bb918b0f25818f511b8d0b20e21762"
+  },
+  "C:\\Striver_Website\\striver-web\\package.json": {
+    "mtime": 1778869897.1612723,
+    "ast_hash": "03ed1e240a9d83f355d13285bceae157",
+    "semantic_hash": "03ed1e240a9d83f355d13285bceae157"
+  },
+  "C:\\Striver_Website\\striver-web\\.claude\\settings.json": {
+    "mtime": 1778947014.629129,
+    "ast_hash": "5d6ecd96cf065b16e8bb9fbf5d7d8f0d",
+    "semantic_hash": "5d6ecd96cf065b16e8bb9fbf5d7d8f0d"
+  },
+  "C:\\Striver_Website\\striver-web\\.claude\\settings.local.json": {
+    "mtime": 1778947706.851204,
+    "ast_hash": "d680c4e78955b660c0c42b33a4968272",
+    "semantic_hash": "d680c4e78955b660c0c42b33a4968272"
+  },
+  "C:\\Striver_Website\\striver-web\\.vercel\\project.json": {
+    "mtime": 1778746342.2872813,
+    "ast_hash": "fc2bfe920bc34cd26ee5c0baa67371c4",
+    "semantic_hash": "fc2bfe920bc34cd26ee5c0baa67371c4"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\layout.js": {
+    "mtime": 1778869945.748822,
+    "ast_hash": "9441a3cfd7c8bed552e61a5d5fec5d79",
+    "semantic_hash": "9441a3cfd7c8bed552e61a5d5fec5d79"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\page.js": {
+    "mtime": 1778780758.7988968,
+    "ast_hash": "07a043a335014b1c0348fa37f4f5bbc9",
+    "semantic_hash": "07a043a335014b1c0348fa37f4f5bbc9"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\accessories\\page.js": {
+    "mtime": 1778742194.6152253,
+    "ast_hash": "92de101454197ef0811ca1f897587f62",
+    "semantic_hash": "92de101454197ef0811ca1f897587f62"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\api\\auth\\route.js": {
+    "mtime": 1778876075.4818575,
+    "ast_hash": "4b3fa07ce0f25ea7ac3b1d1f9d9bd59a",
+    "semantic_hash": "4b3fa07ce0f25ea7ac3b1d1f9d9bd59a"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\blog\\page.js": {
+    "mtime": 1778740528.4254744,
+    "ast_hash": "9fe11b2d96ce4987cb6510daeb34fa52",
+    "semantic_hash": "9fe11b2d96ce4987cb6510daeb34fa52"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\contact\\page.js": {
+    "mtime": 1778741426.1758177,
+    "ast_hash": "e78a92ba95e62e0b80ee727df2369bb7",
+    "semantic_hash": "e78a92ba95e62e0b80ee727df2369bb7"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\gym\\page.js": {
+    "mtime": 1778878051.529578,
+    "ast_hash": "e60c193b0c893154baf3b059b10eac8a",
+    "semantic_hash": "e60c193b0c893154baf3b059b10eac8a"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\home\\page.js": {
+    "mtime": 1778878037.039661,
+    "ast_hash": "5053a8c7d6573e6f03b4524dceff26a6",
+    "semantic_hash": "5053a8c7d6573e6f03b4524dceff26a6"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\how-it-works\\page.js": {
+    "mtime": 1778744051.930129,
+    "ast_hash": "347679646b8f904d730dfa156e8277e7",
+    "semantic_hash": "347679646b8f904d730dfa156e8277e7"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\login\\page.js": {
+    "mtime": 1778872960.9988368,
+    "ast_hash": "830e877af1e199368f57cfc9669dec16",
+    "semantic_hash": "830e877af1e199368f57cfc9669dec16"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\office\\page.js": {
+    "mtime": 1778878044.1965652,
+    "ast_hash": "2a75e73b8ff28d27921802efdaf783f7",
+    "semantic_hash": "2a75e73b8ff28d27921802efdaf783f7"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\press\\page.js": {
+    "mtime": 1778740982.298085,
+    "ast_hash": "9b3f3ea01369020adb25765ec313aa56",
+    "semantic_hash": "9b3f3ea01369020adb25765ec313aa56"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\privacy\\page.js": {
+    "mtime": 1778740169.309685,
+    "ast_hash": "eb81ef06ae4d73c446a64b1748ba2dcc",
+    "semantic_hash": "eb81ef06ae4d73c446a64b1748ba2dcc"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\return\\page.js": {
+    "mtime": 1778740188.2366066,
+    "ast_hash": "d9dcbe2e67eb53d0a3be33f502341576",
+    "semantic_hash": "d9dcbe2e67eb53d0a3be33f502341576"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\reviews\\page.js": {
+    "mtime": 1778740963.6648352,
+    "ast_hash": "bbc8c292eff11e9378b0c235c377dad5",
+    "semantic_hash": "bbc8c292eff11e9378b0c235c377dad5"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\shop\\page.js": {
+    "mtime": 1778787140.600458,
+    "ast_hash": "54bc3d0bb617a238405df9838e07b935",
+    "semantic_hash": "54bc3d0bb617a238405df9838e07b935"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\signup\\page.js": {
+    "mtime": 1778872960.897946,
+    "ast_hash": "069acaef3c3ef57cbf725ff8b3a14f00",
+    "semantic_hash": "069acaef3c3ef57cbf725ff8b3a14f00"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\terms\\page.js": {
+    "mtime": 1778740149.4130433,
+    "ast_hash": "45d6e59318f82ba81d182bcc600db618",
+    "semantic_hash": "45d6e59318f82ba81d182bcc600db618"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\app\\wishlist\\page.js": {
+    "mtime": 1778867744.269741,
+    "ast_hash": "514f8a3542d7404eff1e7aab3ee682f4",
+    "semantic_hash": "514f8a3542d7404eff1e7aab3ee682f4"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\About\\About.js": {
+    "mtime": 1778784874.0937667,
+    "ast_hash": "6c9cec68167b8a3dd117f092e33d4262",
+    "semantic_hash": "6c9cec68167b8a3dd117f092e33d4262"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\AppFeatures\\AppFeatures.js": {
+    "mtime": 1778785100.4174862,
+    "ast_hash": "baea85601fbaca56c2fe8d89f131b6bb",
+    "semantic_hash": "baea85601fbaca56c2fe8d89f131b6bb"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\Discover\\Discover.js": {
+    "mtime": 1778744251.6063385,
+    "ast_hash": "bbb1cb226cdbbabfc2c49b9b1940b3cb",
+    "semantic_hash": "bbb1cb226cdbbabfc2c49b9b1940b3cb"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\EnvironmentPage\\EnvironmentPage.js": {
+    "mtime": 1778878029.2992945,
+    "ast_hash": "493dfd3ebf860462f8d081dc3c353b04",
+    "semantic_hash": "493dfd3ebf860462f8d081dc3c353b04"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\Environments\\Environments.js": {
+    "mtime": 1778877747.4958968,
+    "ast_hash": "c19220841f65ca299738368d969a9d18",
+    "semantic_hash": "c19220841f65ca299738368d969a9d18"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\FeaturesScroll\\FeaturesScroll.js": {
+    "mtime": 1778780386.2202783,
+    "ast_hash": "5a6639fc3a7e56428644b42ca449d2af",
+    "semantic_hash": "5a6639fc3a7e56428644b42ca449d2af"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\FitnessQuiz\\FitnessQuiz.js": {
+    "mtime": 1778877223.9507408,
+    "ast_hash": "9b92b4e65c0d34de481680b6d6aac3f9",
+    "semantic_hash": "9b92b4e65c0d34de481680b6d6aac3f9"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\Hero\\Hero.js": {
+    "mtime": 1778866483.6451676,
+    "ast_hash": "a77ad8a9e6be83a62a13de2c17ee5eaa",
+    "semantic_hash": "a77ad8a9e6be83a62a13de2c17ee5eaa"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\Navbar\\Navbar.js": {
+    "mtime": 1778875350.50806,
+    "ast_hash": "73481b68553c4ff237e260aed8eb4cb6",
+    "semantic_hash": "73481b68553c4ff237e260aed8eb4cb6"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\Prebook\\Prebook.js": {
+    "mtime": 1778785063.889282,
+    "ast_hash": "c4f01cb05a78b17ce6e06ec2d05f3765",
+    "semantic_hash": "c4f01cb05a78b17ce6e06ec2d05f3765"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\ScrollReveal\\ScrollReveal.js": {
+    "mtime": 1778789410.239195,
+    "ast_hash": "14fa52bf05dc342cf12e9a9b7bf87aeb",
+    "semantic_hash": "14fa52bf05dc342cf12e9a9b7bf87aeb"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\SharedFooter\\SharedFooter.js": {
+    "mtime": 1778781282.1955738,
+    "ast_hash": "48404db6732b594d40ecdab991df7607",
+    "semantic_hash": "48404db6732b594d40ecdab991df7607"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\components\\SocialProof\\SocialProof.js": {
+    "mtime": 1778785044.9569857,
+    "ast_hash": "c1a0b34213af2d1df5092100c54a2db3",
+    "semantic_hash": "c1a0b34213af2d1df5092100c54a2db3"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\context\\AuthContext.js": {
+    "mtime": 1778872908.995617,
+    "ast_hash": "60abaef62e7eb2273d528c69b6080a51",
+    "semantic_hash": "60abaef62e7eb2273d528c69b6080a51"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\lib\\supabase-server.js": {
+    "mtime": 1778872871.1321185,
+    "ast_hash": "d52dc3471317e8b789975d01feea6529",
+    "semantic_hash": "d52dc3471317e8b789975d01feea6529"
+  },
+  "C:\\Striver_Website\\striver-web\\src\\lib\\supabase.js": {
+    "mtime": 1778869913.7298737,
+    "ast_hash": "c19776d74bb3ddb6069285df7f111de1",
+    "semantic_hash": "c19776d74bb3ddb6069285df7f111de1"
+  },
+  "C:\\Striver_Website\\striver-web\\CLAUDE.md": {
+    "mtime": 1778947014.629129,
+    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
+    "semantic_hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "C:\\Striver_Website\\striver-web\\README.md": {
+    "mtime": 1778522530.8663187,
+    "ast_hash": "c857cd84a634c198d4501b107da02a78",
+    "semantic_hash": "c857cd84a634c198d4501b107da02a78"
+  },
+  "C:\\Striver_Website\\striver-web\\.vercel\\README.txt": {
+    "mtime": 1778746342.2892969,
+    "ast_hash": "2b13c79d37d6ed82a3255b83b6815034",
+    "semantic_hash": "2b13c79d37d6ed82a3255b83b6815034"
+  }
+}

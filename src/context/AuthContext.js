@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import { supabase } from '@/lib/supabase';
 
 const AuthContext = createContext(null);
 
@@ -17,6 +18,26 @@ export function AuthProvider({ children }) {
       if (stored) setUser(JSON.parse(stored));
     } catch {}
     setLoading(false);
+
+    // Set up Supabase auth listener to sync session if needed
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session?.user && event === 'SIGNED_IN') {
+        // If logged in via Supabase (OAuth or Phone), sync it to our custom state
+        const supaUser = {
+          id: session.user.id,
+          email: session.user.email,
+          phone: session.user.phone,
+          firstName: session.user.user_metadata?.full_name?.split(' ')[0] || 'User',
+          lastName: session.user.user_metadata?.full_name?.split(' ')[1] || '',
+          method: session.user.app_metadata?.provider || 'supabase'
+        };
+        persistUser(supaUser);
+      } else if (event === 'SIGNED_OUT') {
+        persistUser(null);
+      }
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
   // Persist user to localStorage
@@ -61,13 +82,41 @@ export function AuthProvider({ children }) {
     return { data, error: null };
   };
 
-  // OAuth placeholders (Google / Apple — to be configured later)
+  // OAuth implementation (Google)
   const signInWithOAuth = async (provider) => {
-    return { data: null, error: { message: `${provider} sign-in will be available soon. Please use email/password for now.` } };
+    if (provider === 'apple') {
+       return { data: null, error: { message: `Apple sign-in is not configured. Please use Phone or Google.` } };
+    }
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: `${window.location.origin}/`,
+      },
+    });
+    return { data, error };
+  };
+
+  // Phone Auth (Send OTP)
+  const signInWithPhone = async (phone) => {
+    const { data, error } = await supabase.auth.signInWithOtp({
+      phone,
+    });
+    return { data, error };
+  };
+
+  // Verify Phone OTP
+  const verifyPhoneOtp = async (phone, token) => {
+    const { data, error } = await supabase.auth.verifyOtp({
+      phone,
+      token,
+      type: 'sms',
+    });
+    return { data, error };
   };
 
   // Logout
   const signOut = async () => {
+    await supabase.auth.signOut();
     persistUser(null);
   };
 
@@ -79,6 +128,8 @@ export function AuthProvider({ children }) {
         signUp,
         signIn,
         signInWithOAuth,
+        signInWithPhone,
+        verifyPhoneOtp,
         signOut,
         isAuthenticated: !!user,
       }}

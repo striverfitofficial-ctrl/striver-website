@@ -5,15 +5,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
-import { FaApple, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaPhone, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useAuth } from "@/context/AuthContext";
 import styles from "../signup/Signup.module.css";
 
 export default function Login() {
   const router = useRouter();
-  const { signIn, signInWithOAuth } = useAuth();
+  const { signIn, signInWithOAuth, signInWithPhone, verifyPhoneOtp } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [otp, setOtp] = useState("");
+  const [isPhoneMode, setIsPhoneMode] = useState(false);
+  const [otpSent, setOtpSent] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
@@ -41,6 +45,42 @@ export default function Login() {
     setError("");
     const { error: oauthError } = await signInWithOAuth(provider);
     if (oauthError) setError(oauthError.message);
+  };
+
+  const handleSendOtp = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+    setLoading(true);
+
+    const { error: otpError } = await signInWithPhone(phone);
+    setLoading(false);
+
+    if (otpError) {
+      setError(otpError.message);
+      return;
+    }
+
+    setOtpSent(true);
+    setSuccess("Verification code sent to your phone!");
+  };
+
+  const handleVerifyOtp = async (e) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+    setLoading(true);
+
+    const { error: verifyError } = await verifyPhoneOtp(phone, otp);
+    setLoading(false);
+
+    if (verifyError) {
+      setError(verifyError.message);
+      return;
+    }
+
+    setSuccess("Logged in! Redirecting...");
+    setTimeout(() => router.push("/"), 800);
   };
 
   return (
@@ -77,11 +117,15 @@ export default function Login() {
           </button>
           <button
             className={styles.socialBtn}
-            onClick={() => handleOAuth("apple")}
+            onClick={() => {
+              setIsPhoneMode(true);
+              setError("");
+              setSuccess("");
+            }}
             type="button"
           >
-            <FaApple size={20} color="#fff" />
-            Apple
+            <FaPhone size={18} color="#fff" />
+            Phone
           </button>
         </div>
 
@@ -89,41 +133,92 @@ export default function Login() {
           <span>Or</span>
         </div>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.inputGroup}>
-            <label>Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className={styles.inputGroup}>
-            <label>Password</label>
-            <div className={styles.passwordWrapper}>
+        {isPhoneMode ? (
+          <form className={styles.form} onSubmit={otpSent ? handleVerifyOtp : handleSendOtp}>
+            {!otpSent ? (
+              <>
+                <div className={styles.inputGroup}>
+                  <label>Phone Number</label>
+                  <input
+                    type="tel"
+                    placeholder="+1234567890"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className={styles.submitBtn} disabled={loading}>
+                  {loading ? "Sending..." : "Send Code"}
+                </button>
+              </>
+            ) : (
+              <>
+                <div className={styles.inputGroup}>
+                  <label>Verification Code</label>
+                  <input
+                    type="text"
+                    placeholder="123456"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                    required
+                  />
+                </div>
+                <button type="submit" className={styles.submitBtn} disabled={loading}>
+                  {loading ? "Verifying..." : "Verify & Log In"}
+                </button>
+              </>
+            )}
+            <button 
+              type="button" 
+              className={styles.link} 
+              style={{ marginTop: '1rem', background: 'none', border: 'none', cursor: 'pointer' }}
+              onClick={() => {
+                setIsPhoneMode(false);
+                setOtpSent(false);
+                setError("");
+                setSuccess("");
+              }}
+            >
+              Back to Email Login
+            </button>
+          </form>
+        ) : (
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.inputGroup}>
+              <label>Email</label>
               <input
-                type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <button
-                type="button"
-                className={styles.eyeBtn}
-                onClick={() => setShowPassword((v) => !v)}
-                aria-label={showPassword ? "Hide password" : "Show password"}
-              >
-                {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
-              </button>
             </div>
-          </div>
 
-          <button type="submit" className={styles.submitBtn} disabled={loading}>
-            {loading ? "Logging in..." : "Log In"}
-          </button>
-        </form>
+            <div className={styles.inputGroup}>
+              <label>Password</label>
+              <div className={styles.passwordWrapper}>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <button
+                  type="button"
+                  className={styles.eyeBtn}
+                  onClick={() => setShowPassword((v) => !v)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <FaEyeSlash size={16} /> : <FaEye size={16} />}
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" className={styles.submitBtn} disabled={loading}>
+              {loading ? "Logging in..." : "Log In"}
+            </button>
+          </form>
+        )}
 
         <p className={styles.footerText}>
           Don&apos;t have an account? <Link href="/signup" className={styles.link}>Sign up</Link>
