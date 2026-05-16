@@ -118,19 +118,7 @@ export default function Login() {
             type="button"
           >
             <FcGoogle size={20} />
-            Google
-          </button>
-          <button
-            className={styles.socialBtn}
-            onClick={() => {
-              setIsPhoneMode(true);
-              setError("");
-              setSuccess("");
-            }}
-            type="button"
-          >
-            <FaPhoneAlt size={16} color="#fff" />
-            Phone
+            Continue with Google
           </button>
         </div>
 
